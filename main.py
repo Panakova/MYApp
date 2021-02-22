@@ -17,7 +17,7 @@ from kivy.properties import ObjectProperty
 from kivy.core.window import Window
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivymd.uix.button import MDIconButton,MDRaisedButton, MDFillRoundFlatButton,MDFloatingActionButton, MDRectangleFlatButton, MDFloatingActionButtonSpeedDial, MDFlatButton, MDRoundFlatButton, MDTextButton
-from kivymd.uix.list import OneLineAvatarIconListItem,ILeftBodyTouch ,ThreeLineAvatarListItem,MDList,ThreeLineAvatarIconListItem
+from kivymd.uix.list import OneLineAvatarIconListItem,ILeftBodyTouch ,ThreeLineAvatarListItem,MDList, ThreeLineAvatarIconListItem
 from kivymd.uix.boxlayout import BoxLayout, MDBoxLayout
 from kivymd.uix.toolbar import MDToolbar
 from kivymd.uix.dialog import MDDialog
@@ -51,12 +51,12 @@ class HomeScreen(Screen):
         self.M_dialog.dismiss()
 
     def show_ChooseDialog(self):
-        self.choose_dialog = MDDialog(title="Test zameraný pre:",size_hint=[0.9, 0.5], auto_dismiss=True,
-                buttons=[MDRaisedButton(text="osobné zlepšenie",on_release= self.next_page_me,
+        self.choose_dialog = MDDialog(title="Test zameraný pre:",text= " - osobné zlepšenie (1) \n - prácu v tíme (2) \n - osobné vzťahy (3)",size_hint=[0.9, 0.5], auto_dismiss=True,
+                buttons=[MDRaisedButton(text="1",on_release= self.next_page_me,
                                    on_press= self.close_choose_dialog,),
-                        MDRaisedButton(text="prácu v tíme", on_release= self.next_page_team,
+                        MDRaisedButton(text="2", on_release= self.next_page_team,
                                     on_press= self.close_choose_dialog, ),
-                        MDRaisedButton(text="osobné vzťahy",on_release= self.next_page_we,
+                        MDRaisedButton(text="3",on_release= self.next_page_we,
                                     on_press= self.close_choose_dialog,)],)
         self.choose_dialog.open()
 
@@ -91,7 +91,7 @@ class HomeScreen(Screen):
     def main_navigate(self, button):
         if button.icon == "home":
             self.manager.current = "home"
-        elif button.icon == "lightning-bolt":
+        elif button.icon == 'flash':
             self.manager.current = "goals"
         elif button.icon == "notebook":
             self.manager.current = "history"
@@ -102,7 +102,7 @@ class MotivationScreenMe(Screen):
     def main_navigate(self, button):
         if button.icon == "home":
             self.manager.current = "home"
-        elif button.icon == "lightning-bolt":
+        elif button.icon == 'flash':
             self.manager.current = "mygoals"
         elif button.icon == "notebook":
             self.manager.current = "history"
@@ -111,14 +111,14 @@ class MotivationScreenMe(Screen):
         file = open("testy.txt", "a")
         file.write(self.ids.nazov_testu.text)
         file.write("\n")
-        user = test(self.ids.nazov_testu.text)
+        #testovatel = test(self.ids.nazov_testu.text)
 
 class MotivationScreenTeam(Screen):
 
     def main_navigate(self, button):
         if button.icon == "home":
             self.manager.current = "home"
-        elif button.icon == "lightning-bolt":
+        elif button.icon == 'flash':
             self.manager.current = "mygoals"
         elif button.icon == "notebook":
             self.manager.current = "history"
@@ -133,7 +133,7 @@ class MotivationScreenWe(Screen):
     def main_navigate(self, button):
         if button.icon == "home":
             self.manager.current = "home"
-        elif button.icon == "lightning-bolt":
+        elif button.icon == 'flash':
             self.manager.current = "mygoals"
         elif button.icon == "notebook":
             self.manager.current = "history"
@@ -452,34 +452,36 @@ class test:
         elif self.k_dvojica[0] > self.s_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.d_dvojica[0] == 0:
             print("43")
             self.ukazovatel = "43"
+        else:
+            pass
 
     @staticmethod
     def get_date():
         return str(datetime.datetime.now())
 
     def zapis_test(self):
+        self.testovatel = "test1"
         with open("testy.txt", "r") as p:
             load = p.read()
         with open("testy.txt", "w") as p:
             p.write(load)
-            p.write(self.testovatel +";"+ self.ukazovatel+";"+ self.get_date() )
+            p.write("Názov: "+self.testovatel +"; Ukazovateľ: "+ self.ukazovatel+";"+ self.get_date() )
 
 class TestScreenV(Screen):
     snackbar = None
     dele_dialog = None
     help_dialog_m = None
     help_dialog_v = None
-    p = 0
-    user = test("test1")
+    testovatel = test("test1")
 
     def dele_v(self):
-        if self.user.test_v != []:
+        if self.testovatel.test_v != []:
             toast("Vymazaná posledná možnosť z testu NAJVIAC")
-            del self.user.test_v[len(self.user.test_v)-1]
+            del self.testovatel.test_v[len(self.testovatel.test_v)-1]
 
     def dele_m(self):
-        if self.user.test_m != []:
-            del self.user.test_m[len(self.user.test_m)-1]
+        if self.testovatel.test_m != []:
+            del self.testovatel.test_m[len(self.testovatel.test_m)-1]
             toast("Vymazaná posledná možnosť z testu NAJMENEJ")
 
 
@@ -503,42 +505,49 @@ class TestScreenV(Screen):
         self.help_dialog_v.dismiss()
 
     def d_plus(self):
-        self.user.test_v += ('d',)
+        self.testovatel.test_v += ('d',)
 
     def i_plus(self):
-        self.user.test_v += ('i',)
+        self.testovatel.test_v += ('i',)
 
     def s_plus(self):
-        self.user.test_v +=('s',)
+        self.testovatel.test_v +=('s',)
 
     def k_plus(self):
-        self.user.test_v +=('k',)
+        self.testovatel.test_v +=('k',)
 
     def n_plus(self):
-        self.user.test_v +=('n',)
+        self.testovatel.test_v +=('n',)
 
     def d(self):
-        self.user.test_m +=('d',)
+        self.testovatel.test_m +=('d',)
 
     def i(self):
-        self.user.test_m +=('i',)
+        self.testovatel.test_m +=('i',)
 
     def s(self):
-        self.user.test_m +=('s',)
+        self.testovatel.test_m +=('s',)
 
     def k(self):
-        self.user.test_m +=('k',)
+        self.testovatel.test_m +=('k',)
 
     def n(self):
-        self.user.test_m +=('n',)
+        self.testovatel.test_m +=('n',)
 
     def vyhodnot(self):
-        print("Výsledok pre test V  ", self.user.vysledok_v())
-        print("list je", self.user.test_v)
-        print("Výsledok pre test M  ", self.user.vysledok_m())
-        print("list je", self.user.test_m)
-        print("Spoločný Výsledok   ", self.user.vysledok_spol())
-        print(self.user.vyhodnotenie())
+        if len(self.testovatel.test_v)== 24 and len(self.testovatel.test_m)== 24:
+            self.testovatel.vyhodnotenie()
+        elif len(self.testovatel.test_v)< 24 or len(self.testovatel.test_m)< 24:
+            self.show_HelpDialogM()
+        elif len(self.testovatel.test_v)> 24 or len(self.testovatel.test_m)> 24:
+            self.show_HelpDialogV()
+
+        #print("Výsledok pre test V  ", self.testovatel.vysledok_v())
+        #print("list je", self.testovatel.test_v)
+        #print("Výsledok pre test M  ", self.testovatel.vysledok_m())
+        #print("list je", self.testovatel.test_m)
+        #print("Spoločný Výsledok   ", self.testovatel.vysledok_spol())
+        #print(self.testovatel.vyhodnotenie())
 
     def show_example_snackbar(self):
         self.snackbar = Snackbar(text="Ukončiť test?",
@@ -552,12 +561,9 @@ class TestScreenV(Screen):
         self.snackbar.open()
 
     def evaluate (self,obj):
+        self.testovatel.zapis_test()
         self.manager.current= "history"
         self.manager.transition.direction = 'left'
-
-    def plus(self):
-        self.p = self.p +2.08
-        self.ids.progress.value = self.p
 
 class MyGoalsScreen (Screen):
 
@@ -572,7 +578,7 @@ class MyGoalsScreen (Screen):
     def main_navigate(self, button):
         if button.icon == "home":
             self.manager.current = "home"
-        elif button.icon == "lightning-bolt":
+        elif button.icon == 'flash':
             self.manager.current = "mygoals"
         elif button.icon == "notebook":
             self.manager.current = "history"
@@ -697,7 +703,7 @@ class GoalsScreen(Screen):
     def main_navigate(self, button):
         if button.icon == "home":
             self.manager.current = "home"
-        elif button.icon == "lightning-bolt":
+        elif button.icon == 'flash':
             self.manager.current = "mygoals"
         elif button.icon == "notebook":
             self.manager.current = "history"
@@ -713,7 +719,7 @@ class HistoryScreen(Screen):
         for line in file:
             load_file = load_file + line
             self.ids.mylabel2.add_widget(
-                ThreeLineAvatarListItem(text="Test: " + line[0:5], secondary_text="Ukazovatel: " ,
+                ThreeLineAvatarListItem(text="Test: " + line, secondary_text="Ukazovatel: " ,
                                         tertiary_text=" " ))
 
         file.close()
@@ -739,7 +745,7 @@ class HistoryScreen(Screen):
     def main_navigate(self, button):
         if button.icon == "home":
             self.manager.current = "home"
-        elif button.icon == "lightning-bolt":
+        elif button.icon == 'flash':
             self.manager.current = "mygoals"
         elif button.icon == "notebook":
             self.manager.current = "history"
