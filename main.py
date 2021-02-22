@@ -720,7 +720,7 @@ class HistoryScreen(Screen):
             load_file = load_file + line
             self.ids.mylabel2.add_widget(
                 ThreeLineAvatarListItem(text="Test: " + line, secondary_text="Ukazovatel: " ,
-                                        tertiary_text=" " ))
+                                        tertiary_text="Dátum: " ))
 
         file.close()
 
