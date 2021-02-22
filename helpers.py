@@ -36,13 +36,14 @@ ScreenManager:
 
     MDTextButton:
         text: "=> Spoznaj seba <="
-        pos_hint: { "center_x" :0.7, "center_y":0.9}
+        pos_hint: { "center_x" :0.5, "center_y":0.9}
         custom_color: 0.96,0.79,0.09, 1
+        font_size: "30sp"
         on_release: root.show_motivation_dialog()
     Image:
         source: "all.png"
         pos_hint: { "center_x" :0.5, "center_y":0.5}
-        size_hint: (1,1)
+        size: self.texture_size
 
     MDFloatingActionButton:
         icon: "play-circle-outline"
@@ -61,7 +62,7 @@ ScreenManager:
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            'flash': 'Ciele',
             'notebook': 'Moje testy'}
 
 <MotivationScreenMe>:
@@ -71,7 +72,8 @@ ScreenManager:
     MDCard:
         orientation: "vertical"
         pos_hint:{ "center_x" :0.5, "center_y": 0.6} 
-        size_hint: 0.8, 0.7
+        size_hint: 0.8, None
+        height: self.minimum_height
         padding: "8dp"
 
         MDLabel:
@@ -137,7 +139,7 @@ ScreenManager:
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            'flash': 'Ciele',
             'notebook': 'Moje testy'} 
 
 <MotivationScreenTeam>:
@@ -147,7 +149,8 @@ ScreenManager:
     MDCard:
         orientation: "vertical"
         pos_hint:{ "center_x" :0.5, "center_y": 0.6} 
-        size_hint: 0.8, 0.7
+        size_hint: 0.8, None
+        height: self.minimum_height
         padding: "8dp"
 
         MDLabel:
@@ -222,7 +225,7 @@ ScreenManager:
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            'flash': 'Ciele',
             'notebook': 'Moje testy'} 
 
 <MotivationScreenWe>:
@@ -232,7 +235,8 @@ ScreenManager:
     MDCard:
         orientation: "vertical"
         pos_hint:{ "center_x" :0.5, "center_y": 0.6} 
-        size_hint: 0.8, 0.7
+        size_hint: 0.8, None
+        height: self.minimum_height
         padding: "8dp"
 
         MDLabel:
@@ -308,32 +312,32 @@ ScreenManager:
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            'flash': 'Ciele',
             'notebook': 'Moje testy'} 
 
 <TestScreenV>:
     name: "testv"
-    
+        
     ScrollView:
         do_scroll_x: False
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
-            height: dp(1100)
+            height: dp(1500)
             spacing: "20dp"
             
             MDSeparator:
                 height: "1dp"
                 
-    
             MDCard:
                 orientation: "vertical"
                 padding: "8dp"
-                size_hint: 0.9,1
+                size_hint: 0.9, 1
+                height: self.minimum_height
                 pos_hint: {"center_x": .5, "center_y": .5}
         
                 OneLineListItem:                          
-                    text: "Vyber možnosť, ktorá ťa NAJVIAC vystihuje"
+                    text: "NAJVIAC ma vystihuje"
                     theme_text_color: "Custom"
                     text_color: app.theme_cls.primary_color
                     
@@ -346,7 +350,7 @@ ScreenManager:
                     on_press: self.background_color = (0.95,0.26,0.2,0.5)
                     on_release: root.dele_v()
                     size: (1, 1)
-                    size_hint: 1, 0.15
+                    size_hint: 1, 0.1
                     
                 MDSeparator:
                     height: "1dp"
@@ -370,13 +374,11 @@ ScreenManager:
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
                             on_press: self.background_color = (0.95,0.26,0.2,1)
-                            on_release:
-                                root.plus()
-                                root.s_plus()
+                            on_release: root.s_plus()
                         Button:
                             text: "som bezproblemový spoločník"
                             on_press: 
-                                root.plus()
+                                
                                 root.n_plus()
                             text_of_the_option: ("n",)
                             background_normal: ""
@@ -386,7 +388,7 @@ ScreenManager:
                         Button:
                             text: "chcem zvíťaziť"
                             on_press: 
-                                root.plus()
+                                
                                 root.d_plus()
                             text_of_the_option: ("d",)
                             background_normal: ""
@@ -396,7 +398,7 @@ ScreenManager:
                         Button:
                             text: "veľa sa smejem"
                             on_press: 
-                                root.plus()
+                                
                                 root.n_plus()
                             text_of_the_option: ("n",)
                             background_normal: ""
@@ -415,7 +417,7 @@ ScreenManager:
                             color: (0,0,0,1)
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
-                                root.plus()
+                                
                                 root.i_plus()
                             text_of_the_option: "i"
                         Button:
@@ -426,7 +428,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:    
                             text: "mám silnú vôľu"
@@ -436,7 +438,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "som bezstarostný a veselý"
@@ -446,7 +448,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -461,7 +463,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "robím, čo chcem ja"
@@ -471,7 +473,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:   
                             text: "priateľským chovaním dosiahnem, čo chcem"
@@ -481,7 +483,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "som úprimný k iným"
@@ -491,7 +493,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -506,7 +508,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "viem sa dobre ovládať"
@@ -516,7 +518,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:   
                             text: "som kolegiálny a milý"
@@ -526,7 +528,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "som nekľudný"
@@ -536,7 +538,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -551,7 +553,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "snažím sa prekonať ostatných"
@@ -561,7 +563,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button: 
                             text: "držím sa pravidiel"
@@ -571,7 +573,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "som za každú srandu"
@@ -581,7 +583,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
         
                         OneLineListItem:
@@ -596,7 +598,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "som ohľaduplný"
@@ -606,7 +608,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "som pôvabný"
@@ -616,7 +618,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "som spokojný"
@@ -626,7 +628,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -641,7 +643,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "som presný"
@@ -651,7 +653,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "som vyrovnaný"
@@ -661,7 +663,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "rád prevezmem iniciatívu"
@@ -671,7 +673,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -686,7 +688,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "som rád stredobodom pozornosti"
@@ -696,7 +698,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button: 
                             text: "mám skolny predpokladať ťažkosti"
@@ -706,7 +708,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "som ľahko ovplyvniteľný"
@@ -716,7 +718,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -731,7 +733,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "som ochotný pomôcť iným"
@@ -741,7 +743,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "zasadzujem sa za svoje princípy"
@@ -751,7 +753,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "nemám problém poradiť sa"
@@ -761,7 +763,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -776,7 +778,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "dobre vychádzam s inými"
@@ -786,7 +788,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "vždy chcem každému vyhovieť"
@@ -796,7 +798,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "som temperamentný"
@@ -806,7 +808,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
         
@@ -822,7 +824,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "som človek činu"
@@ -832,7 +834,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button: 
                             text: "mám mäkké srdce"
@@ -842,7 +844,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "mám zmysel pre krásne veci"
@@ -852,7 +854,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -867,7 +869,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "rád sa zabávam"
@@ -877,7 +879,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button: 
                             text: "nevyhýbam sa hádkam"
@@ -887,7 +889,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "som diplomatický"
@@ -897,7 +899,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                             
                         OneLineListItem:
@@ -912,7 +914,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "som spontánny, bezprostredný"
@@ -922,7 +924,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:   
                             text: "som mierumilovný"
@@ -932,7 +934,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "prejavujem iným dôveru"
@@ -942,7 +944,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -957,7 +959,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "mám rád dobrodružstvá"
@@ -967,7 +969,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button: 
                             text: "s optimizmom hľadím do budúcnosti"
@@ -977,7 +979,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "beriem ohľad na iných"
@@ -987,7 +989,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -1002,7 +1004,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "som zdržanlivý"
@@ -1012,7 +1014,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:  
                             text: "dokážem iných ľahko presvedčiť"
@@ -1022,7 +1024,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "mám veľa nápadov"
@@ -1032,7 +1034,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -1047,7 +1049,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "nemám ťažkosti zmieriť sa s niečím"
@@ -1057,7 +1059,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:  
                             text: "držím sa svojich zvyklostí"
@@ -1067,7 +1069,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "rád rozhodujem"
@@ -1077,7 +1079,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -1092,7 +1094,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "považujem za dôležité mať úspech"
@@ -1102,7 +1104,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:   
                             text: "milo sa správam k iným"
@@ -1112,7 +1114,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "dokážem iných ovplyvniť"
@@ -1122,7 +1124,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
         
                         OneLineListItem:
@@ -1137,7 +1139,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "dokážem sa vytrvalo zahryznúť do úlohy"
@@ -1147,7 +1149,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button: 
                             text: "som zvedavý"
@@ -1157,7 +1159,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "dbám na potreby iných"
@@ -1167,7 +1169,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -1182,7 +1184,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "rád pracujem sám"
@@ -1192,7 +1194,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button: 
                             text: "som skôr tichý typ človeka"
@@ -1202,7 +1204,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "len tak ľahko sa nerozčúlim"
@@ -1212,7 +1214,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -1227,7 +1229,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "som otvorený a spoločenský"
@@ -1237,7 +1239,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "som veľkorysý a štedrý"
@@ -1247,7 +1249,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "som veľmi priamočiary"
@@ -1257,7 +1259,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -1272,7 +1274,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "mám odvahu rozhodovať"
@@ -1282,7 +1284,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "ľahko dokážem nadchnúť iných"
@@ -1292,7 +1294,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "ľahko sa poddám"
@@ -1302,7 +1304,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -1317,7 +1319,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "mám sklony neprejaviť svoju mienku"
@@ -1327,7 +1329,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "najskôr si premyslím, potom poviem"
@@ -1337,7 +1339,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "poviem rovno, čo si myslím"
@@ -1347,7 +1349,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -1362,7 +1364,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "nemám rád extrémy"
@@ -1372,7 +1374,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:  
                             text: "som prístupný novým úlohám"
@@ -1382,7 +1384,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "chcem zažiť niečo zaujímavé"
@@ -1392,7 +1394,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -1407,7 +1409,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "som chápavý voči iným"
@@ -1417,7 +1419,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "preukazujem rešpekt voči iným"
@@ -1427,7 +1429,7 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "som sebaistý"
@@ -1437,24 +1439,20 @@ ScreenManager:
                             on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
-                                root.plus()
+                                
                             text_of_the_option: "i"
             
-            MDProgressBar:
-                id: progress
-                size_hint_x: 0.8
-                size_hint_y: 0.08
-                color: app.theme_cls.accent_color
-                pos_hint: { "center_x" :0.5, "center_y":0.2}
+            
                             
             MDCard:
                 orientation: "vertical"
                 padding: "8dp"
-                size_hint: 0.9,1
+                size_hint: 0.9, 1
+                height: self.minimum_height
                 pos_hint: {"center_x": .5, "center_y": .6} 
                    
                 OneLineListItem:                          
-                    text: "Vyber možnosť, ktorá ťa NAJMENEJ vystihuje"
+                    text: "NAJMENEJ ma vystihuje"
                     theme_text_color: "Custom"
                     text_color: 0.19,0.38,0.17,1
                     font_size: (root.width**2 + root.height**2) / 13**4
@@ -1467,7 +1465,7 @@ ScreenManager:
                     on_press: self.background_color = (0.6,0.73,0.35,0.5)
                     on_release: root.dele_m()
                     size: (1, 1)
-                    size_hint: 1, 0.15
+                    size_hint: 1, 0.1
     
                 ScrollView:
                     do_scroll_x: False
@@ -1489,7 +1487,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             text_of_the_option: "s"
                             on_press: 
-                                root.plus()
+                                
                                 root.s()
                         Button:
                             text: "poslušný"
@@ -1499,7 +1497,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button: 
                             text: "náročný"
@@ -1508,7 +1506,7 @@ ScreenManager:
                             color: (0,0,0,1)
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
-                                root.plus()
+                                
                                 root.d()
                             text_of_the_option: "d"
                         Button:
@@ -1518,7 +1516,7 @@ ScreenManager:
                             color: (0,0,0,1)
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
-                                root.plus()
+                                
                                 root.n()
                             text_of_the_option: "n"
         
@@ -1533,7 +1531,7 @@ ScreenManager:
                             color: (0,0,0,1)
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
-                                root.plus()
+                                
                                 root.i()
                             text_of_the_option: "i"
                         Button:
@@ -1543,7 +1541,7 @@ ScreenManager:
                             color: (0,0,0,1)
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
-                                root.plus()
+                                
                                 root.k()
                             text_of_the_option: "k"
                         Button:
@@ -1553,7 +1551,7 @@ ScreenManager:
                             color: (0,0,0,1)
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
-                                root.plus()
+                                
                                 root.n()
                             text_of_the_option: "n"
                         Button:
@@ -1563,7 +1561,7 @@ ScreenManager:
                             color: (0,0,0,1)
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
-                                root.plus()
+                                
                                 root.s()
                             text_of_the_option: "s"
         
@@ -1579,7 +1577,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "zásadový"
@@ -1589,7 +1587,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "neústupčivý"
@@ -1599,7 +1597,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "milý"
@@ -1609,7 +1607,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -1624,7 +1622,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "spokojný"
@@ -1634,7 +1632,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "odvážny"
@@ -1644,7 +1642,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "šikovný"
@@ -1654,7 +1652,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -1669,7 +1667,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "kritický"
@@ -1679,7 +1677,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "obľúbený"
@@ -1689,7 +1687,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "priateľský"
@@ -1699,7 +1697,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
         
                         OneLineListItem:
@@ -1714,7 +1712,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "podnetný"
@@ -1724,7 +1722,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "poddajný"
@@ -1734,7 +1732,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "hanblivý"
@@ -1744,7 +1742,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -1759,7 +1757,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "presvedčivý"
@@ -1769,7 +1767,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:   
                             text: "skromný"
@@ -1779,7 +1777,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "originálny"
@@ -1789,7 +1787,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -1804,7 +1802,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "ústupčivý"
@@ -1814,7 +1812,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button: 
                             text: "podmanivý"
@@ -1824,7 +1822,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "bojazlivý"
@@ -1834,7 +1832,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -1849,7 +1847,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "presný"
@@ -1859,7 +1857,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:  
                             text: "priamy"
@@ -1869,7 +1867,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "uzatvorený"
@@ -1879,7 +1877,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -1894,7 +1892,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "pripravený na riziko"
@@ -1904,7 +1902,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "optimistický"
@@ -1914,7 +1912,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "ústretový"
@@ -1924,7 +1922,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
         
@@ -1940,7 +1938,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "ľahko ovplyvniteľný"
@@ -1950,7 +1948,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:  
                             text: "lojálny"
@@ -1960,7 +1958,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "šarmantný"
@@ -1970,7 +1968,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -1985,7 +1983,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "ctižiadostivý"
@@ -1995,7 +1993,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button: 
                             text: "veselý"
@@ -2005,7 +2003,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "vyrovnaný"
@@ -2015,7 +2013,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                             
                         OneLineListItem:
@@ -2030,7 +2028,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "pokojný"
@@ -2040,7 +2038,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "puntičkársky"
@@ -2050,7 +2048,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "šťastný"
@@ -2060,7 +2058,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -2075,7 +2073,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "prispôsobivý"
@@ -2085,7 +2083,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "vtipný"
@@ -2095,7 +2093,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "nenútený"
@@ -2105,7 +2103,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -2120,7 +2118,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "snaživý"
@@ -2130,7 +2128,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button: 
                             text: "príjemný"
@@ -2140,7 +2138,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "bezstarostný"
@@ -2150,7 +2148,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -2165,7 +2163,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "uznávaný"
@@ -2175,7 +2173,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "starostlivý"
@@ -2185,7 +2183,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "neistý"
@@ -2195,7 +2193,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -2210,7 +2208,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "zdržanlivý"
@@ -2220,7 +2218,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "tradicionalista"
@@ -2230,7 +2228,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "sebaistý"
@@ -2240,7 +2238,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
         
                         OneLineListItem:
@@ -2255,7 +2253,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "chápavý"
@@ -2265,7 +2263,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "tolerantný"
@@ -2275,7 +2273,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "priebojný"
@@ -2285,7 +2283,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -2300,7 +2298,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "živý"
@@ -2310,7 +2308,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:  
                             text: "poriadkumilovný"
@@ -2320,7 +2318,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "vytrvalý"
@@ -2330,7 +2328,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
         
                         OneLineListItem:
@@ -2345,7 +2343,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "povzbudzujúci"
@@ -2355,7 +2353,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button: 
                             text: "pozitívne mysliaci"
@@ -2365,7 +2363,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button:
                             text: "mierumilovný"
@@ -2375,7 +2373,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -2390,7 +2388,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "činorodý"
@@ -2400,7 +2398,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:   
                             text: "strhujúci"
@@ -2410,7 +2408,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "dobročinný"
@@ -2420,7 +2418,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
         
                         OneLineListItem:
@@ -2435,7 +2433,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"
                         Button:
                             text: "ochotný"
@@ -2445,7 +2443,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "silný"
@@ -2455,7 +2453,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "zábavný"
@@ -2465,7 +2463,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -2480,7 +2478,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "rozhodný"
@@ -2490,7 +2488,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
-                                root.plus()
+                                
                             text_of_the_option: "s"
                         Button: 
                             text: "sympatický"
@@ -2500,7 +2498,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
-                                root.plus()
+                                
                             text_of_the_option: "k"
                         Button:
                             text: "rozumný"
@@ -2510,7 +2508,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
         
                         OneLineListItem:
@@ -2525,7 +2523,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
-                                root.plus()
+                                
                             text_of_the_option: "d"
                         Button:
                             text: "kultivovaný"
@@ -2535,7 +2533,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:   
                             text: "silný"
@@ -2545,7 +2543,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
-                                root.plus()
+                                
                             text_of_the_option: "n"
                         Button:
                             text: "zhovievavý"
@@ -2555,7 +2553,7 @@ ScreenManager:
                             on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
-                                root.plus()
+                                
                             text_of_the_option: "i"  
             
             MDSeparator:
@@ -2567,7 +2565,7 @@ ScreenManager:
         md_bg_color: app.theme_cls.primary_color
         on_release: 
             root.vyhodnot()
-            root.show_example_snackbar()      
+            root.show_example_snackbar() 
         
 <GoalsScreen>:
     name: "goals"
@@ -2593,12 +2591,14 @@ ScreenManager:
         
     MDCard:
         orientation: "vertical"
+        height: self.minimum_height
         padding: "8dp"
         size_hint: 0.95,0.7
         pos_hint: {"center_x": .5, "center_y": .53}
         
         ScrollView:
             do_scroll_x: False
+            
             MDList:
                 padding: "10dp"
                 spacing: "10dp"
@@ -2606,7 +2606,11 @@ ScreenManager:
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
-                    height: self.size[1]
+                    height: self.minimum_height
+                    spacing: "20dp"
+                    
+                    MDSeparator:
+                        height: "1dp"   
                      
                     MDLabel: 
                         halign: "center"
@@ -2695,7 +2699,7 @@ ScreenManager:
                     bg_color: 1,0.76,0.03,0.5
                     text: "Pre tím"
                     IconLeftSampleWidget:
-                        icon: "human-capacity-increase"
+                        icon: "account-group"
                 
                 MDTextField:
                     id: ciel5
@@ -2740,8 +2744,14 @@ ScreenManager:
                     
                 OneLineListItem:
                     bg_color: 1,0.76,0.03,0.5
-                    text: "Jednoduché to vedieť, potrebné o tom hovoriť, ale najdôležitejšie je KONAŤ"
-                    
+                    text: "Jednoduché to vedieť,"
+                OneLineListItem:
+                    bg_color: 1,0.76,0.03,0.5
+                    text: "potrebné o tom hovoriť, "
+                OneLineListItem:
+                    bg_color: 1,0.76,0.03,0.5
+                    text: "ale najdôležitejšie je KONAŤ"
+                        
                     
                 MDTextField:
                     id: ciel10
@@ -2760,7 +2770,7 @@ ScreenManager:
         
     MDFillRoundFlatButton:
         text: "Uložiť"
-        size_hint: None, None
+        size_hint: 0.3,0.1
         pos_hint: {"center_x" :0.5, "center_y":0.08}
         on_release: 
             root.add_goals()
@@ -2770,7 +2780,7 @@ ScreenManager:
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            'flash': 'Ciele',
             'notebook': 'Moje testy'}
                
          
@@ -2782,7 +2792,7 @@ ScreenManager:
         md_bg_color: 0.6,0.73,0.35,1
         #md_bg_color: 0.33,0.6,0.46,1
         pos_hint: {"top": 1} 
-        right_action_items: [['lightning-bolt', lambda x: None]] 
+        right_action_items: [['flash', lambda x: None]] 
 
     MDCard:
         pos_hint:{ "center_x" :0.5, "center_y": 0.5} 
@@ -2818,7 +2828,7 @@ ScreenManager:
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            'flash': 'Ciele',
             'notebook': 'Moje testy'}
        
 <HistoryScreen>:
@@ -2852,14 +2862,16 @@ ScreenManager:
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            'flash': 'Ciele',
             'notebook': 'Moje testy'}
             
+
+
 <MainApp@Screen>:        
     MDFloatingActionButtonSpeedDial:
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            'flash': 'Ciele',
             'notebook': 'Moje testy'}
 """
 
