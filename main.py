@@ -17,7 +17,7 @@ from kivy.properties import ObjectProperty
 from kivy.core.window import Window
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivymd.uix.button import MDIconButton,MDRaisedButton, MDFillRoundFlatButton,MDFloatingActionButton, MDRectangleFlatButton, MDFloatingActionButtonSpeedDial, MDFlatButton, MDRoundFlatButton, MDTextButton
-from kivymd.uix.list import OneLineAvatarIconListItem,ILeftBodyTouch ,ThreeLineAvatarListItem,MDList, CheckboxLeftWidget,ThreeLineAvatarIconListItem
+from kivymd.uix.list import OneLineAvatarIconListItem,ILeftBodyTouch ,ThreeLineAvatarListItem,MDList,ThreeLineAvatarIconListItem
 from kivymd.uix.boxlayout import BoxLayout, MDBoxLayout
 from kivymd.uix.toolbar import MDToolbar
 from kivymd.uix.dialog import MDDialog
