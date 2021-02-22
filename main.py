@@ -9,12 +9,14 @@ from result import BehaviorModel1, BehaviorModel2, BehaviorModel3, BehaviorModel
 
 from functools import partial
 
-from kivymd.toast.kivytoast.kivytoast import toast
-from kivy.uix.screenmanager import Screen, ScreenManager
-from kivymd.uix.button import MDIconButton,MDRaisedButton, MDFillRoundFlatButton,MDFloatingActionButton, MDRectangleFlatButton, MDFloatingActionButtonSpeedDial, MDFlatButton, MDRoundFlatButton, MDTextButton
 from kivy.uix.image import Image
 from kivy.uix.button import Button
 from kivy.lang import Builder
+from kivy.uix.scrollview import ScrollView
+from kivy.properties import ObjectProperty
+from kivy.core.window import Window
+from kivy.uix.screenmanager import Screen, ScreenManager
+from kivymd.uix.button import MDIconButton,MDRaisedButton, MDFillRoundFlatButton,MDFloatingActionButton, MDRectangleFlatButton, MDFloatingActionButtonSpeedDial, MDFlatButton, MDRoundFlatButton, MDTextButton
 from kivymd.uix.boxlayout import BoxLayout, MDBoxLayout
 from kivymd.uix.toolbar import MDToolbar
 from kivymd.uix.dialog import MDDialog
@@ -24,12 +26,10 @@ from kivymd.uix.textfield import MDTextField, MDTextFieldRect
 from kivymd.uix.snackbar import Snackbar
 from kivymd.uix.card import MDSeparator
 from kivymd.uix.list import MDList, CheckboxLeftWidget
-from kivy.uix.scrollview import ScrollView
-from kivy.properties import ObjectProperty
-from kivy.core.window import Window
 from kivymd.uix.gridlayout import GridLayout
 from kivymd.uix.list import ThreeLineAvatarIconListItem
 from kivymd.uix.bottomsheet import MDListBottomSheet
+from kivymd.toast.kivytoast.kivytoast import toast
 
 class HomeScreen(Screen):
     choose_dialog= None
