@@ -8,14 +8,17 @@ from helpers import screen_helper
 from result import BehaviorModel1, BehaviorModel2, BehaviorModel3, BehaviorModel4
 
 from functools import partial
+
+from kivymd.toast.kivytoast.kivytoast import toast
 from kivy.uix.screenmanager import Screen, ScreenManager
-from kivymd.uix.button import MDIconButton,MDRaisedButton, MDFillRoundFlatButton,MDFloatingActionButton, MDRectangleFlatButton, MDFloatingActionButtonSpeedDial, MDFlatButton, MDRoundFlatButton
+from kivymd.uix.button import MDIconButton,MDRaisedButton, MDFillRoundFlatButton,MDFloatingActionButton, MDRectangleFlatButton, MDFloatingActionButtonSpeedDial, MDFlatButton, MDRoundFlatButton, MDTextButton
 from kivy.uix.image import Image
+from kivy.uix.button import Button
 from kivy.lang import Builder
 from kivymd.uix.boxlayout import BoxLayout, MDBoxLayout
 from kivymd.uix.toolbar import MDToolbar
 from kivymd.uix.dialog import MDDialog
-from kivymd.uix.list import OneLineAvatarIconListItem, ILeftBodyTouch, ThreeLineAvatarListItem
+from kivymd.uix.list import OneLineAvatarIconListItem,ILeftBodyTouch ,ThreeLineAvatarListItem
 from kivymd.uix.label import MDLabel
 from kivymd.uix.textfield import MDTextField, MDTextFieldRect
 from kivymd.uix.snackbar import Snackbar
@@ -27,17 +30,6 @@ from kivy.core.window import Window
 from kivymd.uix.gridlayout import GridLayout
 from kivymd.uix.list import ThreeLineAvatarIconListItem
 from kivymd.uix.bottomsheet import MDListBottomSheet
-
-
-class ItemConfirm(OneLineAvatarIconListItem):
-    divider = None
-
-    def set_icon(self, choice):
-        choice.active = True
-        check_list = choice.get_widgets(choice.group)
-        for check in check_list:
-            if check != choice:
-                check.active = False
 
 class HomeScreen(Screen):
     choose_dialog= None
@@ -61,13 +53,12 @@ class HomeScreen(Screen):
         self.M_dialog.dismiss()
 
     def show_ChooseDialog(self):
-        self.choose_dialog = MDDialog(title="Test zameraný pre:", type="confirmation",
-                size_hint=[0.9, 0.5], auto_dismiss=False,
-                items=[ItemConfirm(text="osobné zlepšenie",on_release= self.next_page_me,
+        self.choose_dialog = MDDialog(title="Test zameraný pre:",size_hint=[0.9, 0.5], auto_dismiss=True,
+                buttons=[MDRaisedButton(text="osobné zlepšenie",on_release= self.next_page_me,
                                    on_press= self.close_choose_dialog,),
-                        ItemConfirm(text="prácu v tíme", on_release= self.next_page_team,
+                        MDRaisedButton(text="prácu v tíme", on_release= self.next_page_team,
                                     on_press= self.close_choose_dialog, ),
-                        ItemConfirm(text="osobné vzťahy",on_release= self.next_page_we,
+                        MDRaisedButton(text="osobné vzťahy",on_release= self.next_page_we,
                                     on_press= self.close_choose_dialog,)],)
         self.choose_dialog.open()
 
@@ -125,7 +116,6 @@ class MotivationScreenMe(Screen):
         user = test(self.ids.nazov_testu.text)
 
 class MotivationScreenTeam(Screen):
-    nazov_testu = ObjectProperty(None)
 
     def main_navigate(self, button):
         if button.icon == "home":
@@ -141,7 +131,6 @@ class MotivationScreenTeam(Screen):
         file.write("\n")
 
 class MotivationScreenWe(Screen):
-    nazov_testu = ObjectProperty(None)
 
     def main_navigate(self, button):
         if button.icon == "home":
@@ -155,16 +144,6 @@ class MotivationScreenWe(Screen):
         file = open("testy.txt", "a")
         file.write(self.ids.nazov_testu.text)
         file.write("\n")
-
-class TestConfirm(OneLineAvatarIconListItem):
-    divider = None
-
-    def set_icon(self, choice):
-        choice.active = True
-        check_list = choice.get_widgets(choice.group)
-        for check in check_list:
-            if check != choice:
-                check.active = False
 
 class test:
 
@@ -489,28 +468,40 @@ class test:
 
 class TestScreenV(Screen):
     snackbar = None
+    dele_dialog = None
     help_dialog_m = None
     help_dialog_v = None
     p = 0
     user = test("test1")
 
+    def dele_v(self):
+        if self.user.test_v != []:
+            toast("Vymazaná posledná možnosť z testu NAJVIAC")
+            del self.user.test_v[len(self.user.test_v)-1]
+
+    def dele_m(self):
+        if self.user.test_m != []:
+            del self.user.test_m[len(self.user.test_m)-1]
+            toast("Vymazaná posledná možnosť z testu NAJMENEJ")
+
+
     def show_HelpDialogM(self):
-        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialog)
+        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialogM)
         self.help_dialog_m = MDDialog(title="Niečo nieje v poriadku", text="Pri odpovediach si vynechal niektorú otázku. ",
                               size_hint=[0.9, None], auto_dismiss=False,
                               buttons=[ok_button])
         self.help_dialog_m.open()
 
     def show_HelpDialogV(self):
-        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialog)
+        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialogV)
         self.help_dialog_v = MDDialog(title="Niečo nieje v poriadku", text="Pri odpovediach si zaškrtol viac možností ako je potreba. ",
                               size_hint=[0.9, None], auto_dismiss=False,
                               buttons=[ok_button])
         self.help_dialog_v.open()
 
-    def close_help_dialog(self,obj):
+    def close_help_dialogM(self,obj):
         self.help_dialog_m.dismiss()
-    def close_help_dialog(self,obj):
+    def close_help_dialogV(self,obj):
         self.help_dialog_v.dismiss()
 
     def d_plus(self):
@@ -542,7 +533,6 @@ class TestScreenV(Screen):
 
     def n(self):
         self.user.test_m +=('n',)
-
 
     def vyhodnot(self):
         print("Výsledok pre test V  ", self.user.vysledok_v())
