@@ -64,13 +64,6 @@ ScreenManager:
             'lightning-bolt': 'Ciele',
             'notebook': 'Moje testy'}
 
-<ItemConfirm>
-    on_release: root.set_icon(check)
-
-    CheckboxLeftWidget:
-        id: check
-        group: "check"            
-
 <MotivationScreenMe>:
     name: "motivationme"
     nazov_testu: nazov_testu
@@ -223,7 +216,7 @@ ScreenManager:
         on_release: 
             root.manager.current = "testv"
             root.manager.transition.direction = 'up'
-        on_press: root.test_name()
+        on_press: root.add_test()
 
     MDFloatingActionButtonSpeedDial:
         callback: root.main_navigate
@@ -309,7 +302,7 @@ ScreenManager:
         on_release: 
             root.manager.current = "testv"
             root.manager.transition.direction = 'up'
-        on_press: root.test_name()
+        on_press: root.add_test()
 
     MDFloatingActionButtonSpeedDial:
         callback: root.main_navigate
@@ -317,12 +310,6 @@ ScreenManager:
             {'home': 'Domov',
             'lightning-bolt': 'Ciele',
             'notebook': 'Moje testy'} 
-
-
-<TestConfirm>
-    on_release: root.set_icon(checkbox)
-    CheckboxLeftWidget:
-        id: checkbox
 
 <TestScreenV>:
     name: "testv"
@@ -332,7 +319,7 @@ ScreenManager:
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
-            height: dp(1000)
+            height: dp(1100)
             spacing: "20dp"
             
             MDSeparator:
@@ -343,84 +330,120 @@ ScreenManager:
                 orientation: "vertical"
                 padding: "8dp"
                 size_hint: 0.9,1
-                pos_hint: {"center_x": .5, "center_y": .6}
+                pos_hint: {"center_x": .5, "center_y": .5}
         
                 OneLineListItem:                          
                     text: "Vyber možnosť, ktorá ťa NAJVIAC vystihuje"
                     theme_text_color: "Custom"
                     text_color: app.theme_cls.primary_color
-                    font_size: (root.width**2 + root.height**2) / 13**4
-        
+                    
+                    
+                Button:
+                    text: "Vymazať poslednú možnosť"
+                    background_normal: ""
+                    back_color: (1,0,1,1)
+                    color: (0,0,0,1)
+                    on_press: self.background_color = (0.95,0.26,0.2,0.5)
+                    on_release: root.dele_v()
+                    size: (1, 1)
+                    size_hint: 1, 0.15
+                    
+                MDSeparator:
+                    height: "1dp"
+                    
                 ScrollView:
                     do_scroll_x: False
+                    
                     BoxLayout:
                         orientation: 'vertical'
                         size_hint_y: None
-                        height: dp(6530)
+                        height: dp(6500)
         
                         OneLineListItem:
                             text: "1/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
                             
-                        TestConfirm:
+                        Button:
                             text: "rád sa delím s inými"
-                            font_size: (root.width**2 + root.height**2) / 13**4
-                            text_of_the_option: ("s",)
-                            on_press: 
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_release:
                                 root.plus()
                                 root.s_plus()
-                        TestConfirm:
+                        Button:
                             text: "som bezproblemový spoločník"
-                            font_size: (root.width**2 + root.height**2) / 13**4
                             on_press: 
                                 root.plus()
                                 root.n_plus()
                             text_of_the_option: ("n",)
-                        TestConfirm:    
-                            id: testconfirm
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                        Button:
                             text: "chcem zvíťaziť"
-                            font_size: (root.width**2 + root.height**2) / 13**4
                             on_press: 
                                 root.plus()
                                 root.d_plus()
                             text_of_the_option: ("d",)
-                        TestConfirm:
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                        Button:
                             text: "veľa sa smejem"
-                            font_size: (root.width**2 + root.height**2) / 13**4
                             on_press: 
                                 root.plus()
                                 root.n_plus()
                             text_of_the_option: ("n",)
-        
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            
                         OneLineListItem:
                             text: "2/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color   
-                        TestConfirm:
+                        Button:
                             text: "Som prístupný novým nápadom"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.plus()
                                 root.i_plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "Rád robím láskavosti"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:    
                             text: "mám silnú vôľu"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "som bezstarostný a veselý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
@@ -430,30 +453,42 @@ ScreenManager:
                             text: "3/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "robím, čo odomňa očakávajú"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "robím, čo chcem ja"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:   
                             text: "priateľským chovaním dosiahnem, čo chcem"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "som úprimný k iným"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
@@ -463,30 +498,42 @@ ScreenManager:
                             text: "4/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "som u iných obľúbený"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "viem sa dobre ovládať"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:   
                             text: "som kolegiálny a milý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "som nekľudný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
@@ -496,30 +543,42 @@ ScreenManager:
                             text: "5/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "je ťažké splniť moje očakávania"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "snažím sa prekonať ostatných"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button: 
                             text: "držím sa pravidiel"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "som za každú srandu"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
@@ -529,30 +588,42 @@ ScreenManager:
                             text: "6/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "rád podstupujem riziká"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "som ohľaduplný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:
                             text: "som pôvabný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "som spokojný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
@@ -562,30 +633,42 @@ ScreenManager:
                             text: "7/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "som schopný sa nadchnúť"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "som presný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:
                             text: "som vyrovnaný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "rád prevezmem iniciatívu"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
@@ -595,30 +678,42 @@ ScreenManager:
                             text: "8/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color 
-                        TestConfirm:
+                        Button:
                             text: "mám sebaisté vystupovanie"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "som rád stredobodom pozornosti"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:    
+                        Button: 
                             text: "mám skolny predpokladať ťažkosti"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "som ľahko ovplyvniteľný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
@@ -628,30 +723,42 @@ ScreenManager:
                             text: "9/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "dostávam často pochvalu od iných"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "som ochotný pomôcť iným"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:    
+                        Button:
                             text: "zasadzujem sa za svoje princípy"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "nemám problém poradiť sa"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
@@ -661,30 +768,42 @@ ScreenManager:
                             text: "10/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color 
-                        TestConfirm:
+                        Button:
                             text: "som netrpezlivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "dobre vychádzam s inými"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:
                             text: "vždy chcem každému vyhovieť"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "som temperamentný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
@@ -695,30 +814,42 @@ ScreenManager:
                             text: "11/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color 
-                        TestConfirm:
+                        Button:
                             text: "mám rád kontakt s ľuďmi"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "som človek činu"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button: 
                             text: "mám mäkké srdce"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "mám zmysel pre krásne veci"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
@@ -728,30 +859,42 @@ ScreenManager:
                             text: "12/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "nevidím všetko tak prísne a presne"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "rád sa zabávam"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:    
+                        Button: 
                             text: "nevyhýbam sa hádkam"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "som diplomatický"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
@@ -761,30 +904,42 @@ ScreenManager:
                             text: "13/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "ľahko sa dokážem rozhodnúť"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "som spontánny, bezprostredný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:    
+                        Button:   
                             text: "som mierumilovný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "prejavujem iným dôveru"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
@@ -794,30 +949,42 @@ ScreenManager:
                             text: "14/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "som zdvorilý a vychádzam iným v ústrety"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "mám rád dobrodružstvá"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button: 
                             text: "s optimizmom hľadím do budúcnosti"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "beriem ohľad na iných"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
@@ -827,30 +994,42 @@ ScreenManager:
                             text: "15/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color 
-                        TestConfirm:
+                        Button:
                             text: "ľahko sa dokážem preniesť do cítenia iných"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "som zdržanlivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:  
                             text: "dokážem iných ľahko presvedčiť"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "mám veľa nápadov"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
@@ -860,30 +1039,42 @@ ScreenManager:
                             text: "16/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color 
-                        TestConfirm:
+                        Button:
                             text: "som zhovorčivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "nemám ťažkosti zmieriť sa s niečím"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:    
+                        Button:  
                             text: "držím sa svojich zvyklostí"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "rád rozhodujem"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
@@ -893,30 +1084,42 @@ ScreenManager:
                             text: "17/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "som váhavý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "považujem za dôležité mať úspech"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:   
                             text: "milo sa správam k iným"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "dokážem iných ovplyvniť"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
@@ -926,30 +1129,42 @@ ScreenManager:
                             text: "18/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "dokážem iných strhnúť"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "dokážem sa vytrvalo zahryznúť do úlohy"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button: 
                             text: "som zvedavý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "dbám na potreby iných"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
@@ -959,30 +1174,42 @@ ScreenManager:
                             text: "19/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "som spoločenský"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "rád pracujem sám"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button: 
                             text: "som skôr tichý typ človeka"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "len tak ľahko sa nerozčúlim"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
@@ -992,30 +1219,42 @@ ScreenManager:
                             text: "20/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "som disciplinovaný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "som otvorený a spoločenský"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:    
+                        Button:
                             text: "som veľkorysý a štedrý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "som veľmi priamočiary"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
@@ -1025,30 +1264,42 @@ ScreenManager:
                             text: "21/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "som hanblivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "mám odvahu rozhodovať"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:
                             text: "ľahko dokážem nadchnúť iných"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "ľahko sa poddám"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
@@ -1058,30 +1309,42 @@ ScreenManager:
                             text: "22/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color 
-                        TestConfirm:
+                        Button:
                             text: "ľahko si dokážem iných omotať kolo prsta"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "mám sklony neprejaviť svoju mienku"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:    
+                        Button:
                             text: "najskôr si premyslím, potom poviem"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "poviem rovno, čo si myslím"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
@@ -1091,30 +1354,42 @@ ScreenManager:
                             text: "23/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "som srdečný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "nemám rád extrémy"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s_plus()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:    
+                        Button:  
                             text: "som prístupný novým úlohám"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k_plus()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "chcem zažiť niečo zaujímavé"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
@@ -1124,30 +1399,42 @@ ScreenManager:
                             text: "24/24 "
                             theme_text_color: "Custom"
                             text_color: app.theme_cls.primary_color
-                        TestConfirm:
+                        Button:
                             text: "dokážem presadiť svoju vôľu"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d_plus()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "som chápavý voči iným"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:    
+                        Button:
                             text: "preukazujem rešpekt voči iným"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n_plus()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "som sebaistý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i_plus()
                                 root.plus()
@@ -1171,6 +1458,16 @@ ScreenManager:
                     theme_text_color: "Custom"
                     text_color: 0.19,0.38,0.17,1
                     font_size: (root.width**2 + root.height**2) / 13**4
+                    
+                Button:
+                    text: "Vymazať poslednú možnosť"
+                    background_normal: ""
+                    back_color: (1,0,1,1)
+                    color: (0,0,0,1)
+                    on_press: self.background_color = (0.6,0.73,0.35,0.5)
+                    on_release: root.dele_m()
+                    size: (1, 1)
+                    size_hint: 1, 0.15
     
                 ScrollView:
                     do_scroll_x: False
@@ -1184,30 +1481,42 @@ ScreenManager:
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
                             
-                        TestConfirm:
+                        Button:
                             text: "prieberčivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             text_of_the_option: "s"
                             on_press: 
                                 root.plus()
                                 root.s()
-                        TestConfirm:
+                        Button:
                             text: "poslušný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:    
+                        Button: 
                             text: "náročný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.plus()
                                 root.d()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "hravý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.plus()
                                 root.n()
@@ -1217,30 +1526,42 @@ ScreenManager:
                             text: "2/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1 
-                        TestConfirm:
+                        Button:
                             text: "spoločenský"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.plus()
                                 root.i()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "sebaistý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.plus()
                                 root.k()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:
                             text: "trpezlivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.plus()
                                 root.n()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "kľudný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.plus()
                                 root.s()
@@ -1250,30 +1571,42 @@ ScreenManager:
                             text: "3/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "atraktívny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "zásadový"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:
                             text: "neústupčivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "milý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
@@ -1283,30 +1616,42 @@ ScreenManager:
                             text: "4/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "diplomatický"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "spokojný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:
                             text: "odvážny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "šikovný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
@@ -1316,30 +1661,42 @@ ScreenManager:
                             text: "5/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "nekľudný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "kritický"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:
                             text: "obľúbený"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "priateľský"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
@@ -1349,30 +1706,42 @@ ScreenManager:
                             text: "6/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "odvážny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "podnetný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:
                             text: "poddajný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "hanblivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
@@ -1382,30 +1751,42 @@ ScreenManager:
                             text: "7/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "jemný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "presvedčivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:   
                             text: "skromný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "originálny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
@@ -1415,30 +1796,42 @@ ScreenManager:
                             text: "8/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "arogantný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "ústupčivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:    
+                        Button: 
                             text: "podmanivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "bojazlivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
@@ -1448,30 +1841,42 @@ ScreenManager:
                             text: "9/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "priateľský"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "presný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:    
+                        Button:  
                             text: "priamy"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "uzatvorený"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
@@ -1481,30 +1886,42 @@ ScreenManager:
                             text: "10/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "zdvorilý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "pripravený na riziko"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button:
                             text: "optimistický"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "ústretový"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
@@ -1515,30 +1932,42 @@ ScreenManager:
                             text: "11/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "träfalý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "ľahko ovplyvniteľný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:  
                             text: "lojálny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "šarmantný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
@@ -1548,30 +1977,42 @@ ScreenManager:
                             text: "12/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "ohľaduplný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "ctižiadostivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:    
+                        Button: 
                             text: "veselý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "vyrovnaný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
@@ -1581,30 +2022,42 @@ ScreenManager:
                             text: "13/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "odvážny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "pokojný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:    
+                        Button:
                             text: "puntičkársky"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "šťastný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
@@ -1614,30 +2067,42 @@ ScreenManager:
                             text: "14/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "hašterivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "prispôsobivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:
                             text: "vtipný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "nenútený"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
@@ -1647,30 +2112,42 @@ ScreenManager:
                             text: "15/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "učenlivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "snaživý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:    
+                        Button: 
                             text: "príjemný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "bezstarostný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
@@ -1680,30 +2157,42 @@ ScreenManager:
                             text: "16/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1 
-                        TestConfirm:
+                        Button:
                             text: "rozhodný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "uznávaný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:    
+                        Button:
                             text: "starostlivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "neistý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
@@ -1713,30 +2202,42 @@ ScreenManager:
                             text: "17/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "zhovorčivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "zdržanlivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:
                             text: "tradicionalista"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "sebaistý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
@@ -1746,30 +2247,42 @@ ScreenManager:
                             text: "18/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "suverénny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "chápavý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:
                             text: "tolerantný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "priebojný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
@@ -1779,30 +2292,42 @@ ScreenManager:
                             text: "19/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "veľkorysý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "živý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:  
                             text: "poriadkumilovný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "vytrvalý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
@@ -1812,30 +2337,42 @@ ScreenManager:
                             text: "20/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "dôverčivý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "povzbudzujúci"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:    
+                        Button: 
                             text: "pozitívne mysliaci"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:
+                        Button:
                             text: "mierumilovný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
@@ -1845,30 +2382,42 @@ ScreenManager:
                             text: "21/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "obozretný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "činorodý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:    
+                        Button:   
                             text: "strhujúci"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "dobročinný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
@@ -1878,30 +2427,42 @@ ScreenManager:
                             text: "22/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1 
-                        TestConfirm:
+                        Button:
                             text: "spontánny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
                             text_of_the_option: "i"
-                        TestConfirm:
+                        Button:
                             text: "ochotný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:    
+                        Button:
                             text: "silný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "zábavný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
@@ -1911,30 +2472,42 @@ ScreenManager:
                             text: "23/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "dobrodružný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "rozhodný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s()
                                 root.plus()
                             text_of_the_option: "s"
-                        TestConfirm:    
+                        Button: 
                             text: "sympatický"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k()
                                 root.plus()
                             text_of_the_option: "k"
-                        TestConfirm:
+                        Button:
                             text: "rozumný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
@@ -1944,30 +2517,42 @@ ScreenManager:
                             text: "24/24 "
                             theme_text_color: "Custom"
                             text_color: 0.19,0.38,0.17,1
-                        TestConfirm:
+                        Button:
                             text: "komunikatívny"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d()
                                 root.plus()
                             text_of_the_option: "d"
-                        TestConfirm:
+                        Button:
                             text: "kultivovaný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:    
+                        Button:   
                             text: "silný"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n()
                                 root.plus()
                             text_of_the_option: "n"
-                        TestConfirm:
+                        Button:
                             text: "zhovievavý"
-                            font_size: (root.width**2 + root.height**2) / 13**4
+                            background_normal: ""
+                            back_color: (1,0,1,1)
+                            color: (0,0,0,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i()
                                 root.plus()
@@ -1982,10 +2567,7 @@ ScreenManager:
         md_bg_color: app.theme_cls.primary_color
         on_release: 
             root.vyhodnot()
-            root.show_example_snackbar()
-            
-
-     
+            root.show_example_snackbar()      
         
 <GoalsScreen>:
     name: "goals"
@@ -2273,8 +2855,6 @@ ScreenManager:
             'lightning-bolt': 'Ciele',
             'notebook': 'Moje testy'}
             
-
-
 <MainApp@Screen>:        
     MDFloatingActionButtonSpeedDial:
         data: 
