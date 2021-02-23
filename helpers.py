@@ -48,14 +48,14 @@ ScreenManager:
     MDFloatingActionButton:
         icon: "play-circle-outline"
         size_hint: None, None
-        pos_hint: {"center_x" :0.5, "center_y":0.08}
+        pos_hint: {"center_x" :0.5, "center_y":0.07}
         md_bg_color: app.theme_cls.primary_color
         on_release: root.show_ChooseDialog()
 
     MDFloatingActionButton:
         icon: "help-circle-outline"
         md_bg_color: app.theme_cls.primary_color
-        pos_hint: { "center_x" :0.15, "center_y":0.08}
+        pos_hint: { "center_x" :0.15, "center_y":0.07}
         on_release: root.show_HelpDialog()
 
     MDFloatingActionButtonSpeedDial:
