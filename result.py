@@ -1919,7 +1919,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel2>:
@@ -2053,7 +2053,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel3>:
@@ -2188,7 +2188,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel4>:
@@ -2322,7 +2322,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel12>:
@@ -2456,7 +2456,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel13>:
@@ -2590,7 +2590,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel14>:
@@ -2724,7 +2724,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
 
 <BehaviorModel21>:
@@ -2858,7 +2858,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
 
 <BehaviorModel23>:
@@ -2993,7 +2993,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel24>:
@@ -3128,7 +3128,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel31>:
@@ -3263,7 +3263,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
 
 <BehaviorModel32>:
@@ -3398,7 +3398,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
 
 <BehaviorModel34>:
@@ -3533,7 +3533,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel41>:
@@ -3668,7 +3668,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
             
@@ -3804,7 +3804,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
 
 <BehaviorModel43>:
@@ -3939,7 +3939,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
 
 <BehaviorModel123>:
@@ -4074,7 +4074,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel124>:
@@ -4209,7 +4209,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
 
 <BehaviorModel134>:
@@ -4344,7 +4344,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 <BehaviorModel234>:
@@ -4479,7 +4479,7 @@ KV = '''
         callback: root.main_navigate
         data: 
             {'home': 'Domov',
-            'lightning-bolt': 'Ciele',
+            "flash": 'Ciele',
             'notebook': 'Moje testy'}
             
 
