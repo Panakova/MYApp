@@ -37,13 +37,14 @@ ScreenManager:
     MDTextButton:
         text: "=> Spoznaj seba <="
         pos_hint: { "center_x" :0.5, "center_y":0.9}
-        custom_color: 0.96,0.79,0.09, 1
+        custom_color: 0.6,0.73,0.35,1
         font_size: "30sp"
         on_release: root.show_motivation_dialog()
     Image:
         source: "all.png"
         pos_hint: { "center_x" :0.5, "center_y":0.5}
-        size: self.texture_size
+        size: self.texture_size 
+        size_hint: None, None
 
     MDFloatingActionButton:
         icon: "play-circle-outline"
@@ -2744,13 +2745,10 @@ ScreenManager:
                     
                 OneLineListItem:
                     bg_color: 1,0.76,0.03,0.5
-                    text: "Jednoduché to vedieť,"
+                    text: "Jednoduché to vedieť, potrebné o tom"
                 OneLineListItem:
                     bg_color: 1,0.76,0.03,0.5
-                    text: "potrebné o tom hovoriť, "
-                OneLineListItem:
-                    bg_color: 1,0.76,0.03,0.5
-                    text: "ale najdôležitejšie je KONAŤ"
+                    text: "hovoriť ale najdôležitejšie je KONAŤ"
                         
                     
                 MDTextField:
