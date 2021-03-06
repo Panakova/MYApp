@@ -340,7 +340,7 @@ ScreenManager:
                 OneLineListItem:                          
                     text: "NAJVIAC ma vystihuje"
                     theme_text_color: "Custom"
-                    text_color: app.theme_cls.primary_color
+                    text_color: 0.19,0.38,0.17,1
                     
                     
                 Button:
@@ -348,7 +348,7 @@ ScreenManager:
                     background_normal: ""
                     back_color: (1,0,1,1)
                     color: (0,0,0,1)
-                    on_press: self.background_color = (0.95,0.26,0.2,0.5)
+                    on_press: self.background_color = (0.6,0.73,0.35,0.5)
                     on_release: root.dele_v()
                     size: (1, 1)
                     size_hint: 1, 0.1
@@ -367,14 +367,14 @@ ScreenManager:
                         OneLineListItem:
                             text: "1/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                             
                         Button:
                             text: "rád sa delím s inými"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_release: root.s_plus()
                         Button:
                             text: "som bezproblemový spoločník"
@@ -385,7 +385,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                         Button:
                             text: "chcem zvíťaziť"
                             on_press: 
@@ -395,7 +395,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                         Button:
                             text: "veľa sa smejem"
                             on_press: 
@@ -405,18 +405,18 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             
                         OneLineListItem:
                             text: "2/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color   
+                            text_color: 0.19,0.38,0.17,1   
                         Button:
                             text: "Som prístupný novým nápadom"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 
                                 root.i_plus()
@@ -426,7 +426,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -436,7 +436,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -446,7 +446,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -455,13 +455,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "3/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "robím, čo odomňa očakávajú"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -471,7 +471,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -481,7 +481,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -491,7 +491,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -500,13 +500,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "4/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "som u iných obľúbený"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -516,7 +516,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -526,7 +526,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -536,7 +536,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -545,13 +545,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "5/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "je ťažké splniť moje očakávania"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -561,7 +561,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -571,7 +571,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -581,7 +581,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -590,13 +590,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "6/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "rád podstupujem riziká"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -606,7 +606,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -616,7 +616,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -626,7 +626,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -635,13 +635,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "7/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "som schopný sa nadchnúť"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -651,7 +651,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -661,7 +661,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -671,7 +671,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -680,13 +680,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "8/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color 
+                            text_color: 0.19,0.38,0.17,1 
                         Button:
                             text: "mám sebaisté vystupovanie"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -696,7 +696,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -706,7 +706,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -716,7 +716,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -725,13 +725,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "9/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "dostávam často pochvalu od iných"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -741,7 +741,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -751,7 +751,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -761,7 +761,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -770,13 +770,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "10/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color 
+                            text_color: 0.19,0.38,0.17,1 
                         Button:
                             text: "som netrpezlivý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -786,7 +786,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -796,7 +796,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -806,7 +806,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -816,13 +816,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "11/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color 
+                            text_color: 0.19,0.38,0.17,1 
                         Button:
                             text: "mám rád kontakt s ľuďmi"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -832,7 +832,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -842,7 +842,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -852,7 +852,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -861,13 +861,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "12/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "nevidím všetko tak prísne a presne"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -877,7 +877,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -887,7 +887,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -897,7 +897,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -906,13 +906,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "13/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "ľahko sa dokážem rozhodnúť"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -922,7 +922,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -932,7 +932,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -942,7 +942,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -951,13 +951,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "14/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "som zdvorilý a vychádzam iným v ústrety"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -967,7 +967,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -977,7 +977,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -987,7 +987,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -996,13 +996,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "15/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color 
+                            text_color: 0.19,0.38,0.17,1 
                         Button:
                             text: "ľahko sa dokážem preniesť do cítenia iných"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1012,7 +1012,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1022,7 +1022,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1032,7 +1032,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1041,13 +1041,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "16/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color 
+                            text_color: 0.19,0.38,0.17,1 
                         Button:
                             text: "som zhovorčivý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1057,7 +1057,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1067,7 +1067,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1077,7 +1077,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1086,13 +1086,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "17/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "som váhavý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1102,7 +1102,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1112,7 +1112,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1122,7 +1122,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1131,13 +1131,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "18/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "dokážem iných strhnúť"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1147,7 +1147,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1157,7 +1157,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1167,7 +1167,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1176,13 +1176,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "19/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "som spoločenský"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1192,7 +1192,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1202,7 +1202,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1212,7 +1212,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1221,13 +1221,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "20/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "som disciplinovaný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1237,7 +1237,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1247,7 +1247,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1257,7 +1257,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1266,13 +1266,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "21/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "som hanblivý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1282,7 +1282,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1292,7 +1292,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1302,7 +1302,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1311,13 +1311,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "22/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color 
+                            text_color: 0.19,0.38,0.17,1 
                         Button:
                             text: "ľahko si dokážem iných omotať kolo prsta"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1327,7 +1327,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1337,7 +1337,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1347,7 +1347,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1356,13 +1356,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "23/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "som srdečný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1372,7 +1372,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1382,7 +1382,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1392,7 +1392,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1401,13 +1401,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "24/24 "
                             theme_text_color: "Custom"
-                            text_color: app.theme_cls.primary_color
+                            text_color: 0.19,0.38,0.17,1
                         Button:
                             text: "dokážem presadiť svoju vôľu"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1417,7 +1417,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1427,7 +1427,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1437,7 +1437,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.95,0.26,0.2,1)
+                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1455,7 +1455,7 @@ ScreenManager:
                 OneLineListItem:                          
                     text: "NAJMENEJ ma vystihuje"
                     theme_text_color: "Custom"
-                    text_color: 0.19,0.38,0.17,1
+                    text_color: 0.95,0.26,0.2,1
                     font_size: (root.width**2 + root.height**2) / 13**4
                     
                 Button:
@@ -1463,7 +1463,7 @@ ScreenManager:
                     background_normal: ""
                     back_color: (1,0,1,1)
                     color: (0,0,0,1)
-                    on_press: self.background_color = (0.6,0.73,0.35,0.5)
+                    on_press: self.background_color = (0.95,0.26,0.2,0.5)
                     on_release: root.dele_m()
                     size: (1, 1)
                     size_hint: 1, 0.1
@@ -1478,14 +1478,14 @@ ScreenManager:
                         OneLineListItem:
                             text: "1/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                             
                         Button:
                             text: "prieberčivý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             text_of_the_option: "s"
                             on_press: 
                                 
@@ -1495,7 +1495,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1505,7 +1505,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 
                                 root.d()
@@ -1515,7 +1515,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 
                                 root.n()
@@ -1524,13 +1524,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "2/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1 
+                            text_color: 0.95,0.26,0.2,1 
                         Button:
                             text: "spoločenský"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 
                                 root.i()
@@ -1540,7 +1540,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 
                                 root.k()
@@ -1550,7 +1550,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 
                                 root.n()
@@ -1560,7 +1560,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 
                                 root.s()
@@ -1569,13 +1569,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "3/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "atraktívny"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1585,7 +1585,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -1595,7 +1595,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -1605,7 +1605,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1614,13 +1614,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "4/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "diplomatický"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -1630,7 +1630,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -1640,7 +1640,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1650,7 +1650,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -1659,13 +1659,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "5/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "nekľudný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1675,7 +1675,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -1685,7 +1685,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1695,7 +1695,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -1704,13 +1704,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "6/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "odvážny"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -1720,7 +1720,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -1730,7 +1730,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1740,7 +1740,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1749,13 +1749,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "7/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "jemný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1765,7 +1765,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -1775,7 +1775,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1785,7 +1785,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1794,13 +1794,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "8/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "arogantný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -1810,7 +1810,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -1820,7 +1820,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1830,7 +1830,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1839,13 +1839,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "9/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "priateľský"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1855,7 +1855,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1865,7 +1865,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -1875,7 +1875,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1884,13 +1884,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "10/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "zdvorilý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -1900,7 +1900,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -1910,7 +1910,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1920,7 +1920,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1930,13 +1930,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "11/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "träfalý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -1946,7 +1946,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -1956,7 +1956,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -1966,7 +1966,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1975,13 +1975,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "12/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "ohľaduplný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -1991,7 +1991,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2001,7 +2001,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2011,7 +2011,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2020,13 +2020,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "13/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "odvážny"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2036,7 +2036,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2046,7 +2046,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2056,7 +2056,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -2065,13 +2065,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "14/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "hašterivý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2081,7 +2081,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2091,7 +2091,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2101,7 +2101,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -2110,13 +2110,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "15/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "učenlivý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -2126,7 +2126,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2136,7 +2136,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2146,7 +2146,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2155,13 +2155,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "16/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1 
+                            text_color: 0.95,0.26,0.2,1 
                         Button:
                             text: "rozhodný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2171,7 +2171,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -2181,7 +2181,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2191,7 +2191,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2200,13 +2200,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "17/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "zhovorčivý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2216,7 +2216,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2226,7 +2226,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -2236,7 +2236,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2245,13 +2245,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "18/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "suverénny"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2261,7 +2261,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2271,7 +2271,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2281,7 +2281,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2290,13 +2290,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "19/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "veľkorysý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2306,7 +2306,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2316,7 +2316,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2326,7 +2326,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -2335,13 +2335,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "20/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "dôverčivý"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2351,7 +2351,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2361,7 +2361,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -2371,7 +2371,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2380,13 +2380,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "21/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "obozretný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2396,7 +2396,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2406,7 +2406,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2416,7 +2416,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2425,13 +2425,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "22/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1 
+                            text_color: 0.95,0.26,0.2,1 
                         Button:
                             text: "spontánny"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
@@ -2441,7 +2441,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2451,7 +2451,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2461,7 +2461,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2470,13 +2470,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "23/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "dobrodružný"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2486,7 +2486,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.s()
                                 
@@ -2496,7 +2496,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.k()
                                 
@@ -2506,7 +2506,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2515,13 +2515,13 @@ ScreenManager:
                         OneLineListItem:
                             text: "24/24 "
                             theme_text_color: "Custom"
-                            text_color: 0.19,0.38,0.17,1
+                            text_color: 0.95,0.26,0.2,1
                         Button:
                             text: "komunikatívny"
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.d()
                                 
@@ -2531,7 +2531,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2541,7 +2541,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.n()
                                 
@@ -2551,7 +2551,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.95,0.26,0.2,1)
                             on_press: 
                                 root.i()
                                 
