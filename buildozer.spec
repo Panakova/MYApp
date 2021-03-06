@@ -4,10 +4,10 @@
 title = Spoznaj sam seba
 
 # (str) Package name
-package.name = myapp
+package.name = panakova
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.panakova
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd == 0.104.2.dev0
+requirements = python3,kivy,requests,kivymd == 0.104.2.dev0
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
