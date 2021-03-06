@@ -68,7 +68,6 @@ ScreenManager:
 
 <MotivationScreenMe>:
     name: "motivationme"
-    nazov_testu: nazov_testu
 
     MDCard:
         orientation: "vertical"
@@ -119,14 +118,6 @@ ScreenManager:
             height: self.texture_size[1]
             halign: "center"
 
-    MDTextField:
-        id: nazov_testu
-        hint_text:"Zadaj názov testu"
-        helper_text: "napr. Test 1"
-        helper_text_mode: "on_focus"
-        pos_hint: { "center_x" :0.5, "center_y":0.2}
-        size_hint: 0.8,0.1 
-
     MDFloatingActionButton:
         icon: "play-circle-outline"
         pos_hint: { "center_x" :0.5, "center_y":0.08}
@@ -134,7 +125,6 @@ ScreenManager:
         on_release: 
             root.manager.current = "testv"
             root.manager.transition.direction = 'up'
-        on_press: root.add_test()
 
     MDFloatingActionButtonSpeedDial:
         callback: root.main_navigate
@@ -145,7 +135,6 @@ ScreenManager:
 
 <MotivationScreenTeam>:
     name: "motivationteam"
-    nazov_testu: nazov_testu
 
     MDCard:
         orientation: "vertical"
@@ -204,14 +193,6 @@ ScreenManager:
             size_hint_y: None
             height: self.texture_size[1]
             halign: "center"
-            
-    MDTextField:
-        id: nazov_testu
-        hint_text:"Zadaj názov testu"
-        helper_text: "napr. Test 1"
-        helper_text_mode: "on_focus"
-        pos_hint: { "center_x" :0.5, "center_y":0.2}
-        size_hint: 0.8,0.1 
 
     MDFloatingActionButton:
         icon: "play-circle-outline"
@@ -220,7 +201,6 @@ ScreenManager:
         on_release: 
             root.manager.current = "testv"
             root.manager.transition.direction = 'up'
-        on_press: root.add_test()
 
     MDFloatingActionButtonSpeedDial:
         callback: root.main_navigate
@@ -231,7 +211,6 @@ ScreenManager:
 
 <MotivationScreenWe>:
     name: "motivationwe"
-    nazov_testu: nazov_testu
 
     MDCard:
         orientation: "vertical"
@@ -291,15 +270,6 @@ ScreenManager:
             height: self.texture_size[1]
             halign: "center"
             
-
-    MDTextField:
-        id: nazov_testu
-        hint_text:"Zadaj názov testu"
-        helper_text: "napr. Test 1"
-        helper_text_mode: "on_focus"
-        pos_hint: { "center_x" :0.5, "center_y":0.2}
-        size_hint: 0.8,0.1 
-
     MDFloatingActionButton:
         icon: "play-circle-outline"
         pos_hint: { "center_x" :0.5, "center_y":0.08}
@@ -307,7 +277,6 @@ ScreenManager:
         on_release: 
             root.manager.current = "testv"
             root.manager.transition.direction = 'up'
-        on_press: root.add_test()
 
     MDFloatingActionButtonSpeedDial:
         callback: root.main_navigate
@@ -318,6 +287,7 @@ ScreenManager:
 
 <TestScreenV>:
     name: "testv"
+    nazov_testu: nazov_testu
         
     ScrollView:
         do_scroll_x: False
@@ -329,6 +299,22 @@ ScreenManager:
             
             MDSeparator:
                 height: "1dp"
+                
+            MDTextField:
+                color_mode: "accent"
+                id: nazov_testu
+                hint_text:"Najskôr zadaj názov testu"
+                helper_text: "napr. Test 1"
+                helper_text_mode: "on_focus"
+                pos_hint: { "center_x" :0.5, "center_y":0.9}
+                size_hint: 0.8,0.1 
+                
+            MDFillRoundFlatButton:
+                md_bg_color: app.theme_cls.accent_color
+                pos_hint:{ "center_x" :0.8, "center_y":1} 
+                text: "Potvrď"
+                size_hint: 0.2,0.05
+                on_press: root.add_test()
                 
             MDCard:
                 orientation: "vertical"
@@ -2556,17 +2542,19 @@ ScreenManager:
                                 root.i()
                                 
                             text_of_the_option: "i"  
+                            
+            MDFloatingActionButton:
+                icon: "check-circle-outline"
+                pos_hint: { "center_x" :0.5, "center_y":0.08}
+                md_bg_color: app.theme_cls.primary_color
+                on_release: 
+                    root.vyhodnot()
+                    root.show_example_snackbar()         
             
             MDSeparator:
                 height: "1dp"                
                                
-    MDFloatingActionButton:
-        icon: "check-circle-outline"
-        pos_hint: { "center_x" :0.5, "center_y":0.08}
-        md_bg_color: app.theme_cls.primary_color
-        on_release: 
-            root.vyhodnot()
-            root.show_example_snackbar() 
+    
         
 <GoalsScreen>:
     name: "goals"
@@ -2594,8 +2582,8 @@ ScreenManager:
         orientation: "vertical"
         height: self.minimum_height
         padding: "8dp"
-        size_hint: 0.95,0.7
-        pos_hint: {"center_x": .5, "center_y": .53}
+        size_hint: 0.95,0.75
+        pos_hint: {"center_x": .5, "center_y": .52}
         
         ScrollView:
             do_scroll_x: False
@@ -2609,18 +2597,18 @@ ScreenManager:
                     size_hint_y: None
                     height: self.minimum_height
                     spacing: "20dp"
-                    
-                    MDSeparator:
-                        height: "1dp"   
                      
                     MDLabel: 
                         halign: "center"
                         size_hint_y: None
                         height: self.texture_size[1]
                         text: "Ak si ten, kto chce naplniť svoje túžby a zistiť, čo všetko môže v živote dokázať" 
-                     
+                        
+                    MDSeparator:
+                        height: "1dp" 
+                        
                     MDLabel:
-                        halign: "center"
+                        halign: "justify"
                         size_hint_y: None
                         height: self.texture_size[1]
                         text: "spoznávaj sa => dodržuj svoje ciele => vytvor si z nich návyk => sprav seba lepším"
@@ -2632,7 +2620,7 @@ ScreenManager:
                         text: "V dnešnom svete záleží hlavne na tom, čo dokážes. Ak si spávne zadefinuješ ciele, uistíš sa, že ich zlvádneš. "
                         size_hint_y: None
                         height: self.texture_size[1]  
-                        halign: "center" 
+                        halign: "left" 
                         
                     BoxLayout:                      
                         MDLabel:
@@ -2644,6 +2632,7 @@ ScreenManager:
                         MDRoundFlatButton:
                             text: "SMART" 
                             theme_text_color: "Custom"
+                            line_color: app.theme_cls.accent_color
                             text_color: app.theme_cls.accent_color
                             on_press: root.show_smart()
                             
@@ -2768,12 +2757,10 @@ ScreenManager:
         
     MDFillRoundFlatButton:
         text: "Uložiť"
-        size_hint: 0.3,0.1
-        pos_hint: {"center_x" :0.5, "center_y":0.08}
-        on_release: 
-            root.add_goals()
+        size_hint: None, None
+        pos_hint: {"center_x" :0.5, "center_y":0.05}
+        on_release: root.add_goals()
               
-               
     MDFloatingActionButtonSpeedDial:
         callback: root.main_navigate
         data: 
@@ -2851,7 +2838,7 @@ ScreenManager:
         height: self.texture_size[1]         
 
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.2} 
         size_hint: None, None
         text: "Typy osobností"
         on_press: root.show_bottom_sheet()
@@ -2863,14 +2850,6 @@ ScreenManager:
             'flash': 'Ciele',
             'notebook': 'Moje testy'}
             
-
-
-<MainApp@Screen>:        
-    MDFloatingActionButtonSpeedDial:
-        data: 
-            {'home': 'Domov',
-            'flash': 'Ciele',
-            'notebook': 'Moje testy'}
 """
 
 
