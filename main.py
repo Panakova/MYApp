@@ -142,7 +142,7 @@ class MotivationScreenWe(Screen):
         file = open("testy.txt", "a")
         file.write(self.ids.nazov_testu.text)
         file.write("\n")
-        
+
 
 class test:
 
@@ -472,8 +472,10 @@ class test:
 class TestScreenV(Screen):
     snackbar = None
     dele_dialog = None
-    help_dialog_m = None
-    help_dialog_v = None
+    help_dialog_mm = None
+    help_dialog_mv = None
+    help_dialog_vm = None
+    help_dialog_vv = None
     testovatel = test("test3")
 
     def dele_v(self):
@@ -487,24 +489,42 @@ class TestScreenV(Screen):
             toast("Vymazaná posledná možnosť z testu NAJMENEJ")
 
 
-    def show_HelpDialogM(self):
-        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialogM)
-        self.help_dialog_m = MDDialog(title="Niečo nieje v poriadku", text="Pri odpovediach si vynechal niektorú otázku. ",
+    def show_HelpDialogMM(self):
+        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialogMM)
+        self.help_dialog_mm = MDDialog(title="Niečo nieje v poriadku", text="V teste ,, NAJMENEJ ma vystihuje ,, si vynechal niektorú otázku. ",
                               size_hint=[0.9, None], auto_dismiss=False,
                               buttons=[ok_button])
-        self.help_dialog_m.open()
+        self.help_dialog_mm.open()
 
-    def show_HelpDialogV(self):
-        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialogV)
-        self.help_dialog_v = MDDialog(title="Niečo nieje v poriadku", text="Pri odpovediach si zaškrtol viac možností ako je potreba. ",
+    def show_HelpDialogMV(self):
+        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialogMV)
+        self.help_dialog_mv = MDDialog(title="Niečo nieje v poriadku", text="V teste ,, NAJMENEJ ma vystihuje ,, zaškrtol viac možností ako je potreba. ",
                               size_hint=[0.9, None], auto_dismiss=False,
                               buttons=[ok_button])
-        self.help_dialog_v.open()
+        self.help_dialog_mv.open()
 
-    def close_help_dialogM(self,obj):
-        self.help_dialog_m.dismiss()
-    def close_help_dialogV(self,obj):
-        self.help_dialog_v.dismiss()
+    def show_HelpDialogVM(self):
+        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialogVM)
+        self.help_dialog_vm = MDDialog(title="Niečo nieje v poriadku", text="V teste ,, NAJVIAC ma vystihuje ,,si vynechal niektorú otázku. ",
+                              size_hint=[0.9, None], auto_dismiss=False,
+                              buttons=[ok_button])
+        self.help_dialog_vm.open()
+
+    def show_HelpDialogVV(self):
+        ok_button = MDRaisedButton(text= "Skontroluj si test",on_release=self.close_help_dialogVV)
+        self.help_dialog_vv = MDDialog(title="Niečo nieje v poriadku", text="V teste ,, NAJVIAC ma vystihuje ,, si zaškrtol viac možností ako je potreba. ",
+                              size_hint=[0.9, None], auto_dismiss=False,
+                              buttons=[ok_button])
+        self.help_dialog_vv.open()
+
+    def close_help_dialogMM(self,obj):
+        self.help_dialog_mm.dismiss()
+    def close_help_dialogMV(self,obj):
+        self.help_dialog_mv.dismiss()
+    def close_help_dialogVV(self,obj):
+        self.help_dialog_vv.dismiss()
+    def close_help_dialogVM(self,obj):
+        self.help_dialog_vm.dismiss()
 
     def d_plus(self):
         self.testovatel.test_v += ('d',)
@@ -539,10 +559,14 @@ class TestScreenV(Screen):
     def vyhodnot(self):
         if len(self.testovatel.test_v)== 24 and len(self.testovatel.test_m)== 24:
             self.testovatel.vyhodnotenie()
-        elif len(self.testovatel.test_v)< 24 or len(self.testovatel.test_m)< 24:
-            self.show_HelpDialogM()
-        elif len(self.testovatel.test_v)> 24 or len(self.testovatel.test_m)> 24:
-            self.show_HelpDialogV()
+        elif len(self.testovatel.test_v)< 24:
+            self.show_HelpDialogVM()
+        elif len(self.testovatel.test_v)> 24:
+            self.show_HelpDialogVV()
+        elif len(self.testovatel.test_m)< 24:
+            self.show_HelpDialogMM()
+        elif len(self.testovatel.test_m)> 24:
+            self.show_HelpDialogVV()
 
         #print("Výsledok pre test V  ", self.testovatel.vysledok_v())
         #print("list je", self.testovatel.test_v)
