@@ -142,6 +142,7 @@ class MotivationScreenWe(Screen):
         file = open("testy.txt", "a")
         file.write(self.ids.nazov_testu.text)
         file.write("\n")
+        
 
 class test:
 
@@ -243,41 +244,41 @@ class test:
         # dve cisla s rovnakou poziciou
         elif self.d == 4 and self.i == 1 and self.s < 0 and self.k < -2 or self.d == 5 and self.i == 2 and self.s < 0 and self.k < -2 or self.d == 6 and self.i == 3 and self.s < 0 and self.k < -2 or self.d == 9 and self.i == 5 and self.s < 0 and self.k < -2 or self.d == 10 and self.i == 6 and self.s < 0 and self.k < -2 or self.d == 14 and self.i == 8 and self.s < 0 and self.k < -2 or self.d == 15 and self.i == 9 and self.s < 0 and self.k < -2 or self.d == 16 and self.i == 10 and self.s < 0 and self.k < -2 or self.d == 21 and self.i == 17 and self.s < 0 and self.k < -2:
             print(12)
-            self.ukazovatel = "12"
+            self.ukazovatel = "012"
 
         elif self.d == 4 and self.i < 0 and self.s == 0 and self.k < -2 or self.d == 5 and self.i <0 and self.s == 1 and self.k < -2 or self.d == 6 and self.i <0 and self.s == 2 and self.k < -2 or self.d == 7 and self.i <0 and self.s == 3 and self.k < -2 or self.d == 8 and self.i <0 and self.s == 4 and self.k < -2 or self.d == 9 and self.i <0 and self.s == 5 and self.k < -2 or self.d == 10 and self.i <0 and self.s == 7 and self.k < -2 or self.d == 13 and self.i <0 and self.s == 8 and self.k < -2 or self.d == 14 and self.i <0 and self.s == 9 and self.k < -2 or self.d == 15 and self.i <0 and self.s == 10 and self.k < -2 or self.d == 16 and self.i <0 and self.s == 11 and self.k < -2 or self.d == 21 and self.i <0 and self.s == 19 and self.k < -2 :
             print(13)
-            self.ukazovatel = "13"
+            self.ukazovatel = "013"
 
         elif self.d == 4 and self.i < 0 and self.s < -1 and self.k == -1 or self.d == 5 and self.i < 0 and self.s < -1 and self.k == 0 or self.d == 8 and self.i < 0 and self.s < -1 and self.k == 2 or self.d == 9 and self.i < 0 and self.s < -1 and self.k == 3 or self.d == 13 and self.i < 0 and self.s < -1 and self.k == 5 or self.d == 4 and self.i < 0 and self.s < -1 and self.k == 6 or self.d == 15 and self.i < 0 and self.s < -1 and self.k == 7 or self.d == 16 and self.i < 0 and self.s < -1 and self.k == 8 or self.d == 21 and self.i < 0 and self.s < -1 and self.k == 15:
             print(14)
-            self.ukazovatel = "14"
+            self.ukazovatel = "014"
 
         elif self.d <1 and self.i == 0 and self. s == -1 and self.k < -2 or self.d <1 and self.i == 1 and self. s == 0 and self.k < -2 or self.d <1 and self.i == 2 and self. s == 1 and self.k < -2 or self.d <1 and self.i == 3 and self. s == 2 and self.k < -2 or self.d <1 and self.i == 5 and self. s == 5 and self.k < -2 or self.d <1 and self.i == 6 and self. s == 7 and self.k < -2 or self.d <1 and self.i == 7 and self. s == 8 and self.k < -2 or self.d <1 and self.i == 8 and self. s == 9 and self.k < -2 or self.d <1 and self.i == 9 and self. s == 10 and self.k < -2 or self.d <1 and self.i == 10 and self. s == 11 and self.k < -2 or self.d <1 and self.i == 17 and self. s == 19 and self.k < -2:
             print(23)
-            self.ukazovatel = "23"
+            self.ukazovatel = "023"
 
         elif self.d <1 and self.i == 0 and self. s < -1 and self.k == -2 or self.d <1 and self.i == 1 and self. s < -1 and self.k == -1 or self.d <1 and self.i == 2 and self. s < -1 and self.k == 0 or self.d <1 and self.i == 5 and self. s < -1 and self.k == 3 or self.d <1 and self.i == 8 and self. s < -1 and self.k == 6 or self.d <1 and self.i == 9 and self. s < -1 and self.k == 7 or self.d <1 and self.i == 10 and self. s < -1 and self.k == 8 or self.d <1 and self.i == 17 and self. s < -1 and self.k == 15:
             print(24)
-            self.ukazovatel = "24"
+            self.ukazovatel = "024"
 
         elif self.d <1 and self.i< 0 and self.s == -1 and self.k == -2 or self.d <1 and self.i< 0 and self.s == 0 and self.k == -1 or self.d <1 and self.i< 0 and self.s == 1 and self.k == 0 or self.d <1 and self.i< 0 and self.s == 4 and self.k == 2 or self.d <1 and self.i< 0 and self.s == 5 and self.k == 3 or self.d <1 and self.i< 0 and self.s == 9 and self.k == 6 or self.d <1 and self.i< 0 and self.s == 10 and self.k == 7 or self.d <1 and self.i< 0 and self.s == 11 and self.k == 8 or self.d <1 and self.i< 0 and self.s == 19 and self.k == 15 :
             print(34)
-            self.ukazovatel = "34"
+            self.ukazovatel = "034"
 
         # jedno cislo
         elif self.d >= 1 and self.i < 0 and self.s < -1 and self.k < -2:
             print(1)
-            self.ukazovatel = "1"
+            self.ukazovatel = "001"
         elif self.i >= 0 and self.d < 1 and self.s < -1 and self.k < -2:
             print(2)
-            self.ukazovatel = "2"
+            self.ukazovatel = "002"
         elif self.s >= -1 and self.i < 0 and self.d < 1 and self.k < -2:
             print(3)
-            self.ukazovatel = "3"
+            self.ukazovatel = "003"
         elif self.k >= -2 and self.d < 1 and self.i < 0 and self.s < -1:
             print(4)
-            self.ukazovatel = "4"
+            self.ukazovatel = "004"
 
         #vsetky
         elif self.d >= 1 and self.i >= 0 and self.s >= -1 and self.k >= -2:
@@ -288,6 +289,8 @@ class test:
             self.dve()
 
     def dve(self):
+
+        #d
         if self.d < 1:
             self.d_hodnota = 0
         elif self.d == 1:
@@ -415,43 +418,43 @@ class test:
 
         if self.d_dvojica[0] > self.i_dvojica[0] != 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("12")
-            self.ukazovatel = "12"
+            self.ukazovatel = "012"
         elif self.d_dvojica[0] > self.s_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("13")
-            self.ukazovatel = "13"
+            self.ukazovatel = "013"
         elif self.d_dvojica[0] > self.k_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == 0:
             print("14")
-            self.ukazovatel = "14"
+            self.ukazovatel = "014"
 
         elif self.i_dvojica[0] > self.d_dvojica[0] != 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("21")
-            self.ukazovatel = "21"
+            self.ukazovatel = "021"
         elif self.i_dvojica[0] > self.s_dvojica[0] != 0 and self.d_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("23")
-            self.ukazovatel = "23"
+            self.ukazovatel = "023"
         elif self.i_dvojica[0] > self.k_dvojica[0] != 0 and self.s_dvojica[0] == 0 and self.d_dvojica[0] == 0:
             print("24")
-            self.ukazovatel = "24"
+            self.ukazovatel = "024"
 
         elif self.s_dvojica[0] > self.d_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("31")
-            self.ukazovatel = "31"
+            self.ukazovatel = "031"
         elif self.s_dvojica[0] > self.i_dvojica[0] != 0 and self.d_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("32")
-            self.ukazovatel = "32"
+            self.ukazovatel = "032"
         elif self.s_dvojica[0] > self.k_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.d_dvojica[0] == 0:
             print("34")
-            self.ukazovatel = "34"
+            self.ukazovatel = "034"
 
         elif self.k_dvojica[0] > self.d_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == 0:
             print("41")
-            self.ukazovatel = "41"
+            self.ukazovatel = "041"
         elif self.k_dvojica[0] > self.i_dvojica[0] != 0 and self.d_dvojica[0] == 0 and self.s_dvojica[0] == 0:
             print("42")
-            self.ukazovatel = "42"
+            self.ukazovatel = "042"
         elif self.k_dvojica[0] > self.s_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.d_dvojica[0] == 0:
             print("43")
-            self.ukazovatel = "43"
+            self.ukazovatel = "043"
         else:
             pass
 
@@ -460,19 +463,18 @@ class test:
         return str(datetime.datetime.now())
 
     def zapis_test(self):
-        self.testovatel = "test1"
         with open("testy.txt", "r") as p:
             load = p.read()
         with open("testy.txt", "w") as p:
             p.write(load)
-            p.write("Názov: "+self.testovatel +"; Ukazovateľ: "+ self.ukazovatel+";"+ self.get_date() )
+            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+";"+ self.get_date() )
 
 class TestScreenV(Screen):
     snackbar = None
     dele_dialog = None
     help_dialog_m = None
     help_dialog_v = None
-    testovatel = test("test1")
+    testovatel = test("test3")
 
     def dele_v(self):
         if self.testovatel.test_v != []:
@@ -719,8 +721,8 @@ class HistoryScreen(Screen):
         for line in file:
             load_file = load_file + line
             self.ids.mylabel2.add_widget(
-                ThreeLineAvatarListItem(text="Test: " , secondary_text="Ukazovatel: " ,
-                                        tertiary_text="Dátum: " ))
+                ThreeLineAvatarListItem(text= load_file [0:12] , secondary_text=load_file [14:29],
+                                        tertiary_text="Dátum: "+load_file [31:46] ))
 
         file.close()
 
