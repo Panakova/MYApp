@@ -107,12 +107,6 @@ class MotivationScreenMe(Screen):
         elif button.icon == "notebook":
             self.manager.current = "history"
 
-    def add_test(self):
-        file = open("testy.txt", "a")
-        file.write(self.ids.nazov_testu.text)
-        file.write("\n")
-        #testovatel = test(self.ids.nazov_testu.text)
-
 class MotivationScreenTeam(Screen):
 
     def main_navigate(self, button):
@@ -123,11 +117,6 @@ class MotivationScreenTeam(Screen):
         elif button.icon == "notebook":
             self.manager.current = "history"
 
-    def add_test(self):
-        file = open("testy.txt", "a")
-        file.write(self.ids.nazov_testu.text)
-        file.write("\n")
-
 class MotivationScreenWe(Screen):
 
     def main_navigate(self, button):
@@ -137,12 +126,6 @@ class MotivationScreenWe(Screen):
             self.manager.current = "mygoals"
         elif button.icon == "notebook":
             self.manager.current = "history"
-
-    def add_test(self):
-        file = open("testy.txt", "a")
-        file.write(self.ids.nazov_testu.text)
-        file.write("\n")
-
 
 class test:
 
@@ -476,7 +459,9 @@ class TestScreenV(Screen):
     help_dialog_mv = None
     help_dialog_vm = None
     help_dialog_vv = None
-    testovatel = test("test3")
+
+    def add_test(self):
+        self.testovatel= test(self.ids.nazov_testu.text)
 
     def dele_v(self):
         if self.testovatel.test_v != []:
@@ -745,7 +730,8 @@ class HistoryScreen(Screen):
         for line in file:
             load_file = load_file + line
             self.ids.mylabel2.add_widget(
-                ThreeLineAvatarListItem(text= load_file [0:12] , secondary_text=load_file [14:29],
+                ThreeLineAvatarListItem(text= load_file  [0:12] ,
+                                        secondary_text=load_file [14:29],
                                         tertiary_text="Dátum: "+load_file [31:46] ))
 
         file.close()
