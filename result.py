@@ -1904,13 +1904,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -2038,13 +2038,13 @@ KV = '''
                     on_release: root.s_dialog()
 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -2084,7 +2084,7 @@ KV = '''
         ScrollView: 
          
             MDLabel:
-                text: "Určí si stále tempo a drží sa ho; prejavuje trpez¬livosť; dodržiava záväzky; očakáva a prejavuje lojalitu; venuje pozornosť dôležitým detailom; určuje a bráni si vlastné presvedčenia a hodnoty; dokáže sa nadchnúť pre prírodu a krásne okolie "
+                text: "Určí si stále tempo a drží sa ho; prejavuje trpezlivosť; dodržiava záväzky; očakáva a prejavuje lojalitu; venuje pozornosť dôležitým detailom; určuje a bráni si vlastné presvedčenia a hodnoty; dokáže sa nadchnúť pre prírodu a krásne okolie "
                 theme_text_color: "Primary"
                 size_hint_y: None
                 height: self.texture_size[1]
@@ -2173,13 +2173,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -2307,13 +2307,13 @@ KV = '''
                     on_release: root.s_dialog()
 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -2441,13 +2441,13 @@ KV = '''
                     on_release: root.s_dialog()
 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -2575,13 +2575,13 @@ KV = '''
                     on_release: root.s_dialog()
 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -2709,13 +2709,13 @@ KV = '''
                     on_release: root.s_dialog()
 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -2843,13 +2843,13 @@ KV = '''
                     on_release: root.s_dialog()
 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -2978,13 +2978,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -3113,13 +3113,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -3248,13 +3248,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -3383,13 +3383,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -3518,13 +3518,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -3653,13 +3653,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -3789,13 +3789,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -3924,13 +3924,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -4059,13 +4059,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -4194,13 +4194,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -4329,13 +4329,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
@@ -4464,13 +4464,13 @@ KV = '''
                     
                 
     MDRoundFlatButton:
-        pos_hint:{ "center_x" :0.1, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.1, "center_y": 0.05} 
         size_hint: None, None
         text: "Ok"
         on_press: root.manager.current = "home"
         
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Chcem sa zlepšiť"
         on_press: root.manager.current = "goals"
