@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Spoznaj sam seba
+title = Self-development
 
 # (str) Package name
 package.name = panakova
