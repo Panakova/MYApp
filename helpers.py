@@ -1,5 +1,6 @@
 screen_helper = """
 ScreenManager:
+    FirstScreen:
     HomeScreen:
     MotivationScreenMe:
     MotivationScreenTeam:
@@ -31,21 +32,86 @@ ScreenManager:
     BehaviorModel234:
     
 
+<FirstScreen>:
+    name: "first"
+    
 <HomeScreen>:
     name: "home"
-
-    MDTextButton:
-        text: "=> Spoznaj seba <="
+        
+    MDLabel:
+        id: bla
+        text: "Poď sa pozrieť, čo môžeš dosiahuť."
+        height: self.texture_size[1]
+        halign: "center"
+        size_hint_y: None
         pos_hint: { "center_x" :0.5, "center_y":0.9}
         custom_color: 0.6,0.73,0.35,1
-        font_size: "30sp"
-        on_release: root.show_motivation_dialog()
-    Image:
-        source: "all.png"
-        pos_hint: { "center_x" :0.5, "center_y":0.5}
-        size: self.texture_size 
+        font_size: "30sp"    
+    
+    Button: 
+        background_color: 0,0,0,0
         size_hint: None, None
-
+        pos_hint:{"center_x": 0.44,"center_y": 0.41 }
+        on_press: root.change1 ()  
+        on_release: root.change1back()            
+        
+        Image:
+            id: btn1
+            source: "Vztah.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            
+    Button: 
+        background_color: 0,0,0,0
+        size_hint: None, None
+        pos_hint:{"center_x": 0.57,"center_y": 0.41 }
+        on_press: root.change2 ()  
+        on_release: root.change2back()            
+        
+        Image:
+            id: btn2
+            source: "Ciele.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            
+    Button: 
+        background_color: 0,0,0,0
+        size_hint: None, None
+        pos_hint:{"center_x": 0.57,"center_y": 0.58 }
+        on_press: root.change3 () 
+        on_release: root.change3back()             
+        
+        Image:
+            id: btn3
+            source: "Tim.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            
+    Button: 
+        background_color: 0,0,0,0
+        size_hint: None, None
+        pos_hint:{"center_x": 0.44,"center_y": 0.58 }
+        on_press: root.change4 ()
+        on_release: root.change4back()       
+        
+        Image:
+            id: btn4
+            source: "Ja.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            
+    Button: 
+        background_color: 0,0,0,0
+        size_hint: 0.04,0.04
+        pos_hint:{"center_x": 0.505,"center_y": 0.495 }
+        on_release: root.show_motivation_dialog()     
+        
+        Image:
+            source: "g.png"
+            size_hint: 0.8,0.8
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            
     MDFloatingActionButton:
         icon: "play-circle-outline"
         size_hint: None, None
@@ -93,6 +159,11 @@ ScreenManager:
             height: self.texture_size[1]
             halign: "left"
         MDLabel:
+            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú."
+            size_hint_y: None
+            height: self.texture_size[1]
+            halign: "left"
+        MDLabel:
             text: "   "
             size_hint_y: None
             height: self.texture_size[1]
@@ -116,7 +187,14 @@ ScreenManager:
             text: "Tak poďme na to!"
             size_hint_y: None
             height: self.texture_size[1]
-            halign: "center"
+            halign: "right"
+            
+    MDRectangleFlatButton:
+        text: "Čo môžeš získať?"
+        size_hint: None, None
+        text_color: 0,0,0,1
+        pos_hint: {"center_x" :0.25, "center_y":0.1}
+        on_release: root.show_motivation_dialog()    
 
     MDFloatingActionButton:
         icon: "play-circle-outline"
@@ -159,6 +237,11 @@ ScreenManager:
             height: self.texture_size[1]
             halign: "left"
         MDLabel:
+            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú."
+            size_hint_y: None
+            height: self.texture_size[1]
+            halign: "left"
+        MDLabel:
             text: "   "
             size_hint_y: None
             height: self.texture_size[1]
@@ -192,8 +275,15 @@ ScreenManager:
             text: "Tak poďme na to!"
             size_hint_y: None
             height: self.texture_size[1]
-            halign: "center"
-
+            halign: "right"
+            
+    MDRectangleFlatButton:
+        text: "Čo môžeš získať?"
+        size_hint: None, None
+        text_color: 0,0,0,1
+        pos_hint: {"center_x" :0.25, "center_y":0.1}
+        on_release: root.show_motivation_dialog()    
+        
     MDFloatingActionButton:
         icon: "play-circle-outline"
         pos_hint: { "center_x" :0.5, "center_y":0.08}
@@ -230,7 +320,12 @@ ScreenManager:
         MDSeparator:
             height: "1dp"   
         MDLabel:
-            text: "Pri plnení otázok sa zameraj na svoje obvyklé správanie voči svojim blížnym"
+            text: "Pri plnení otázok sa zameraj na svoje obvyklé správanie voči svojim blížnym."
+            size_hint_y: None
+            height: self.texture_size[1]
+            halign: "left"
+        MDLabel:
+            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú."
             size_hint_y: None
             height: self.texture_size[1]
             halign: "left"
@@ -268,7 +363,14 @@ ScreenManager:
             text: "Tak poďme na to!"
             size_hint_y: None
             height: self.texture_size[1]
-            halign: "center"
+            halign: "right"
+            
+    MDRectangleFlatButton:
+        text: "Čo môžeš získať?"
+        size_hint: None, None
+        text_color: 0,0,0,1
+        pos_hint: {"center_x" :0.25, "center_y":0.1}
+        on_release: root.show_motivation_dialog()    
             
     MDFloatingActionButton:
         icon: "play-circle-outline"
@@ -334,7 +436,7 @@ ScreenManager:
                     background_normal: ""
                     back_color: (1,0,1,1)
                     color: (0,0,0,1)
-                    on_press: self.background_color = (0.6,0.73,0.35,0.5)
+                    on_press: self.background_color = (0.6,0.73,0.35,1)
                     on_release: root.dele_v()
                     size: (1, 1)
                     size_hint: 1, 0.1
@@ -360,7 +462,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.80)
                             on_release: root.s_plus()
                         Button:
                             text: "som bezproblemový spoločník"
@@ -371,7 +473,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                         Button:
                             text: "chcem zvíťaziť"
                             on_press: 
@@ -381,7 +483,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                         Button:
                             text: "veľa sa smejem"
                             on_press: 
@@ -391,7 +493,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             
                         OneLineListItem:
                             text: "2/24 "
@@ -402,7 +504,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 
                                 root.i_plus()
@@ -412,7 +514,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -422,7 +524,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -432,7 +534,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -447,7 +549,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -457,7 +559,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -467,7 +569,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -477,7 +579,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -492,7 +594,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -502,7 +604,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -512,7 +614,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -522,7 +624,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -537,7 +639,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -547,7 +649,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -557,7 +659,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -567,7 +669,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -582,7 +684,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -592,7 +694,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -602,7 +704,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -612,7 +714,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -627,7 +729,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -637,7 +739,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -647,7 +749,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -657,7 +759,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -672,7 +774,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -682,7 +784,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -692,7 +794,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -702,7 +804,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -717,7 +819,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -727,7 +829,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -737,7 +839,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -747,7 +849,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -762,7 +864,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -772,7 +874,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -782,7 +884,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -792,7 +894,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -808,7 +910,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -818,7 +920,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -828,7 +930,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -838,7 +940,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -853,7 +955,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -863,7 +965,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -873,7 +975,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -883,7 +985,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -898,7 +1000,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -908,7 +1010,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -918,7 +1020,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -928,7 +1030,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -943,7 +1045,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -953,7 +1055,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -963,7 +1065,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -973,7 +1075,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -988,7 +1090,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -998,7 +1100,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1008,7 +1110,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1018,7 +1120,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1033,7 +1135,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1043,7 +1145,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1053,7 +1155,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1063,7 +1165,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1078,7 +1180,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1088,7 +1190,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1098,7 +1200,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1108,7 +1210,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1123,7 +1225,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1133,7 +1235,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1143,7 +1245,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1153,7 +1255,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1168,7 +1270,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1178,7 +1280,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1188,7 +1290,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1198,7 +1300,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1213,7 +1315,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1223,7 +1325,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1233,7 +1335,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1243,7 +1345,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1258,7 +1360,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1268,7 +1370,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1278,7 +1380,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1288,7 +1390,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1303,7 +1405,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -1313,7 +1415,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1323,7 +1425,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1333,7 +1435,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1348,7 +1450,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1358,7 +1460,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.s_plus()
                                 
@@ -1368,7 +1470,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.k_plus()
                                 
@@ -1378,7 +1480,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1393,7 +1495,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.d_plus()
                                 
@@ -1403,7 +1505,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1413,7 +1515,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.n_plus()
                                 
@@ -1423,7 +1525,7 @@ ScreenManager:
                             background_normal: ""
                             back_color: (1,0,1,1)
                             color: (0,0,0,1)
-                            on_press: self.background_color = (0.19,0.38,0.17,0.85)
+                            on_press: self.background_color = (0.17,0.42,0.12,0.8)
                             on_press: 
                                 root.i_plus()
                                 
@@ -2543,13 +2645,17 @@ ScreenManager:
                                 
                             text_of_the_option: "i"  
                             
+            MDFillRoundFlatButton:
+                text: "Zatial to nejde ale tvar sa ze hej, klikni sem"
+                size_hint: None, None
+                pos_hint: {"center_x" :0.5, "center_y":0.05}
+                on_release: root.manager.current = "history"
+                            
             MDFloatingActionButton:
                 icon: "check-circle-outline"
-                pos_hint: { "center_x" :0.5, "center_y":0.08}
+                pos_hint: { "center_x" :0.7, "center_y":0.08}
                 md_bg_color: app.theme_cls.primary_color
-                on_release: 
-                    root.vyhodnot()
-                    root.show_example_snackbar()         
+                on_release: root.skontroluj()      
             
             MDSeparator:
                 height: "1dp"                
@@ -2759,7 +2865,10 @@ ScreenManager:
         text: "Uložiť"
         size_hint: None, None
         pos_hint: {"center_x" :0.5, "center_y":0.05}
-        on_release: root.add_goals()
+        on_release: 
+            root.add_goals()
+            root.manager.current = "mygoals"
+            root.manager.transition.direction = 'down'
               
     MDFloatingActionButtonSpeedDial:
         callback: root.main_navigate
@@ -2800,6 +2909,13 @@ ScreenManager:
             id: mylabel
             halign: "left"
             height: self.texture_size[1] 
+    
+    MDFillRoundFlatButton:
+        pos_hint:{ "center_x" :0.25, "center_y": 0.1} 
+        size_hint: None, None
+        text: "Vymazať"
+        on_press: root.vymaz()
+            
          
     MDFillRoundFlatButton:
         pos_hint:{ "center_x" :0.5, "center_y": 0.1} 
