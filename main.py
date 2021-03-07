@@ -29,26 +29,57 @@ from kivymd.uix.gridlayout import GridLayout
 from kivymd.uix.bottomsheet import MDListBottomSheet
 from kivymd.toast.kivytoast.kivytoast import toast
 
+from kivy.uix.label import Label
+from kivy.uix.behaviors import ButtonBehavior
+from kivy.uix.floatlayout import FloatLayout
+
+class ImageButton(ButtonBehavior,FloatLayout, Image):
+    pass
+
+class FirstScreen(Screen):
+    start_dialog = None
+
+    def on_enter(self):
+        btn = MDRectangleFlatButton(text="Poďme na to", on_release= self.frst_dialog, on_press= self.go )
+        self.start_dialog = MDDialog(text="Táto aplikácia ti ponúka test, v ktorom odhalíš svoje prednosti. Na základe nich sa môžeš v budúcnosti zlepšovať. "
+                                          "Na hlavnej stránke sa môžeš bližšie oboznámiť s myšlienkou testu. Volíš si okuh, pre ktorý chceš test vypĺňať. "
+                                          "Pre pokračovanie k testu klikni na stredné tlačidlo. Na začiatku si pomenuj test, potvrď a môžeš začať. ",
+                                     size_hint=[0.8, 0.5], auto_dismiss=True,buttons=[btn])
+        self.start_dialog.open()
+    def go(self,obj):
+        self.manager.current = "home"
+    def frst_dialog(self,obj):
+        self.start_dialog.dismiss()
+
 class HomeScreen(Screen):
     choose_dialog= None
     choice = None
     help_dialog= None
-    M_dialog = None
 
-    def show_motivation_dialog (self):
-        ok_button = MDRaisedButton(text="Poďme na to", on_release=self.close_M_dialog)
-        self.M_dialog = MDDialog(title="Naučíš sa: ", text="- Lepšie spoznať svoje správanie a vystupovanie\n"
-                                                                 "- Oodhaliť svoje osobné prednosti a tendencie\n"
-                                                                 "- Využívať svoju energiu tam, kde môžete byť najúspešnejší\n"
-                                                                 "- Vytvoriť si prostredie v tíme, ktoré najviac dopomôže k úspechu\n"
-                                                                 "- Spoznať oblasti možných konfliktov s inými ľuďmi a zredukovať ich na minimum\n"
-                                                                 "- Rozvíjať svoje silné stránky, sebapoznaním\n",
-                                    size_hint=[0.8, 0.5], auto_dismiss=False,
-                                    buttons=[ok_button])
-        self.M_dialog.open()
+    def change1back(self):
+        self.ids.btn1.source = "Vztah.png"
+    def change2back(self):
+        self.ids.btn2.source = "Ciele.png"
+    def change3back(self):
+        self.ids.btn3.source = "Tim.png"
+    def change4back(self):
+        self.ids.btn4.source = "Ja.png"
 
-    def close_M_dialog(self,obj):
-        self.M_dialog.dismiss()
+    def change1(self):
+        self.ids.bla.text = "Otvor svoje srdce"
+        self.ids.btn1.source = "VztahD.png"
+
+    def change2(self):
+        self.ids.bla.text = "Využi svoje vlastnosti"
+        self.ids.btn2.source = "CieleD.png"
+
+    def change3(self):
+        self.ids.bla.text = "Pochop svoj tím"
+        self.ids.btn3.source = "TimD.png"
+
+    def change4(self):
+        self.ids.bla.text = "Spoznaj sám seba"
+        self.ids.btn4.source = "JaD.png"
 
     def show_ChooseDialog(self):
         self.choose_dialog = MDDialog(title="Test zameraný pre:",text= " - osobné zlepšenie (1) \n - prácu v tíme (2) \n - osobné vzťahy (3)",size_hint=[0.9, 0.5], auto_dismiss=True,
@@ -72,9 +103,9 @@ class HomeScreen(Screen):
         self.manager.current = "motivationwe"
 
     def show_HelpDialog(self):
-        ok_button = MDRaisedButton(text= "Rozummiem",on_release=self.close_help_dialog)
+        ok_button = MDRaisedButton(text= "Rozumiem",on_release=self.close_help_dialog)
         self.help_dialog = MDDialog(title="O čo v teste ide?", text="Ak chceme v živote niečo dosiahnuť, potrebujeme vedieť, v čom sme výnimoční. Tento "
-                                                                    "test ti ponúka 48 otázok, pre lepšie pochopenie svojjch schopností. Pokiaľ budeš "
+                                                                    "test ti ponúka 48 otázok, pre lepšie pochopenie svojich schopností. Pokiaľ budeš "
                                                                     "odpovedať úprimne, umožnia ti vytvoriť prehľad svojej osobnosti. \n\n"
                                                                     "Poznať sám seba je prvý krok k úspechu.\n"
                                                                     "Ak chceš naozaj naplniť svoje túžby a zistiť, čo môžeš v živote dokázať, "
@@ -98,6 +129,22 @@ class HomeScreen(Screen):
 
 
 class MotivationScreenMe(Screen):
+    M_dialog = None
+
+    def show_motivation_dialog (self):
+        ok_button = MDRaisedButton(text="Poďme na to", on_release=self.close_M_dialog)
+        self.M_dialog = MDDialog(title="Naučíš sa: ", text="- Lepšie spoznať svoje správanie a vystupovanie\n"
+                                                                 "- Odhaliť svoje osobné prednosti a tendencie\n"
+                                                                 "- Využívať svoju energiu tam, kde môžete byť najúspešnejší\n"
+                                                                 "- Vytvoriť si prostredie v tíme, ktoré najviac dopomôže k úspechu\n"
+                                                                 "- Spoznať oblasti možných konfliktov s inými ľuďmi a zredukovať ich na minimum\n"
+                                                                 "- Rozvíjať svoje silné stránky, sebapoznaním\n",
+                                    size_hint=[0.8, 0.5], auto_dismiss=False,
+                                    buttons=[ok_button])
+        self.M_dialog.open()
+
+    def close_M_dialog(self,obj):
+        self.M_dialog.dismiss()
 
     def main_navigate(self, button):
         if button.icon == "home":
@@ -108,6 +155,22 @@ class MotivationScreenMe(Screen):
             self.manager.current = "history"
 
 class MotivationScreenTeam(Screen):
+    M_dialog = None
+
+    def show_motivation_dialog (self):
+        ok_button = MDRaisedButton(text="Poďme na to", on_release=self.close_M_dialog)
+        self.M_dialog = MDDialog(title="Naučíš sa: ", text="- Lepšie spoznať svoje správanie a vystupovanie\n"
+                                                                 "- Odhaliť svoje osobné prednosti a tendencie\n"
+                                                                 "- Využívať svoju energiu tam, kde môžete byť najúspešnejší\n"
+                                                                 "- Vytvoriť si prostredie v tíme, ktoré najviac dopomôže k úspechu\n"
+                                                                 "- Spoznať oblasti možných konfliktov s inými ľuďmi a zredukovať ich na minimum\n"
+                                                                 "- Rozvíjať svoje silné stránky, sebapoznaním\n",
+                                    size_hint=[0.8, 0.5], auto_dismiss=False,
+                                    buttons=[ok_button])
+        self.M_dialog.open()
+
+    def close_M_dialog(self,obj):
+        self.M_dialog.dismiss()
 
     def main_navigate(self, button):
         if button.icon == "home":
@@ -118,6 +181,22 @@ class MotivationScreenTeam(Screen):
             self.manager.current = "history"
 
 class MotivationScreenWe(Screen):
+    M_dialog= None
+
+    def show_motivation_dialog (self):
+        ok_button = MDRaisedButton(text="Poďme na to", on_release=self.close_M_dialog)
+        self.M_dialog = MDDialog(title="Naučíš sa: ", text="- Lepšie spoznať svoje správanie a vystupovanie\n"
+                                                                 "- Odhaliť svoje osobné prednosti a tendencie\n"
+                                                                 "- Využívať svoju energiu tam, kde môžete byť najúspešnejší\n"
+                                                                 "- Vytvoriť si prostredie v tíme, ktoré najviac dopomôže k úspechu\n"
+                                                                 "- Spoznať oblasti možných konfliktov s inými ľuďmi a zredukovať ich na minimum\n"
+                                                                 "- Rozvíjať svoje silné stránky, sebapoznaním\n",
+                                    size_hint=[0.8, 0.5], auto_dismiss=False,
+                                    buttons=[ok_button])
+        self.M_dialog.open()
+
+    def close_M_dialog(self,obj):
+        self.M_dialog.dismiss()
 
     def main_navigate(self, button):
         if button.icon == "home":
@@ -272,7 +351,6 @@ class test:
             self.dve()
 
     def dve(self):
-
         #d
         if self.d < 1:
             self.d_hodnota = 0
@@ -450,7 +528,7 @@ class test:
             load = p.read()
         with open("testy.txt", "w") as p:
             p.write(load)
-            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+";"+ self.get_date() )
+            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+"; "+ self.get_date() )
 
 class TestScreenV(Screen):
     snackbar = None
@@ -541,9 +619,10 @@ class TestScreenV(Screen):
     def n(self):
         self.testovatel.test_m +=('n',)
 
-    def vyhodnot(self):
+    def skontroluj(self):
         if len(self.testovatel.test_v)== 24 and len(self.testovatel.test_m)== 24:
             self.testovatel.vyhodnotenie()
+            self.show_example_snackbar()
         elif len(self.testovatel.test_v)< 24:
             self.show_HelpDialogVM()
         elif len(self.testovatel.test_v)> 24:
@@ -552,13 +631,6 @@ class TestScreenV(Screen):
             self.show_HelpDialogMM()
         elif len(self.testovatel.test_m)> 24:
             self.show_HelpDialogVV()
-
-        #print("Výsledok pre test V  ", self.testovatel.vysledok_v())
-        #print("list je", self.testovatel.test_v)
-        #print("Výsledok pre test M  ", self.testovatel.vysledok_m())
-        #print("list je", self.testovatel.test_m)
-        #print("Spoločný Výsledok   ", self.testovatel.vysledok_spol())
-        #print(self.testovatel.vyhodnotenie())
 
     def show_example_snackbar(self):
         self.snackbar = Snackbar(text="Ukončiť test?",
@@ -585,6 +657,12 @@ class MyGoalsScreen (Screen):
             load_file = load_file + line
         file.close()
         self.ids.mylabel.text = load_file
+
+    def vymaz(self):
+        with open("goals.txt", "w") as p:
+            p.write("")
+        self.on_enter()
+
 
     def main_navigate(self, button):
         if button.icon == "home":
@@ -732,7 +810,7 @@ class HistoryScreen(Screen):
             self.ids.mylabel2.add_widget(
                 ThreeLineAvatarListItem(text= load_file  [0:12] ,
                                         secondary_text=load_file [14:29],
-                                        tertiary_text="Dátum: "+load_file [31:46] ))
+                                        tertiary_text="Dátum: "+load_file [32:47] ))
 
         file.close()
 
