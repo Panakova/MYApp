@@ -35,6 +35,7 @@ ScreenManager:
 <FirstScreen>:
     name: "first"
     
+    
 <HomeScreen>:
     name: "home"
         
@@ -57,7 +58,9 @@ ScreenManager:
         
         Image:
             id: btn1
+            size: self.texture_size
             source: "Vztah.png"
+            size_hint: None, None
             center_x: self.parent.center_x
             center_y: self.parent.center_y
             
@@ -86,6 +89,7 @@ ScreenManager:
         Image:
             id: btn3
             source: "Tim.png"
+            size: self.texture_size
             center_x: self.parent.center_x
             center_y: self.parent.center_y
             
@@ -97,10 +101,10 @@ ScreenManager:
         on_release: root.change4back()       
         
         Image:
-            size_hint_x: None
-            size_hint_y: None
+            size: self.texture_size
             id: btn4
             source: "Ja.png"
+            size_hint: None, None
             center_x: self.parent.center_x
             center_y: self.parent.center_y
             
