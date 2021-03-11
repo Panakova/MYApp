@@ -215,46 +215,46 @@ class test:
 
     # spocitanie znakov v teste v#
     def pocetvd(self):
-        d = self.test_v.count('d')
-        return d
+        dv = self.test_v.count('d')
+        return dv
 
     def pocetvi(self):
-        i = self.test_v.count('i')
-        return i
+        iv = self.test_v.count('i')
+        return iv
 
     def pocetvs(self):
-        s = self.test_v.count('s')
-        return s
+        sv = self.test_v.count('s')
+        return sv
 
     def pocetvk(self):
-        k = self.test_v.count('k')
-        return k
+        kv = self.test_v.count('k')
+        return kv
 
     def pocetvn(self):
-        n = self.test_v.count('n')
-        return n
+        nv = self.test_v.count('n')
+        return nv
 
     def pocetmd(self):
-        d = self.test_m.count('d')
-        return d
+        dm = self.test_m.count('d')
+        return dm
 
     def pocetmi(self):
-        i = self.test_m.count('i')
-        return i
+        im = self.test_m.count('i')
+        return im
 
     def pocetms(self):
-        s = self.test_m.count('s')
-        return s
+        sm = self.test_m.count('s')
+        return sm
 
     def pocetmk(self):
-        k = self.test_m.count('k')
-        return k
+        km = self.test_m.count('k')
+        return km
 
     def pocetmn(self):
-        n = self.test_m.count('n')
-        return n
+        nm = self.test_m.count('n')
+        return nm
 
-    # prepocet spolocneho vysledku testv-testm#
+    # prepocet spolocneho vysledku testv-testm
     def vyratajd(self):
         return self.pocetvd() - self.pocetmd()
 
@@ -282,75 +282,13 @@ class test:
     def vysledok_spol(self):
         return (self.vyratajd(), self.vyrataji(), self.vyratajs(), self.vyratajk(), self.vyratajn())
 
-    def vyhodnotenie(self):
+    def priorita(self):
         self.d= self.vyratajd()
         self.i= self.vyrataji()
         self.s= self.vyratajs()
         self.k= self.vyratajk()
         self.ukazovatel = ()
 
-        # tri cisla
-        if self.d >= 1 and self.i >= 0 and self.s >= -1 and self.k < -2:
-            print(123)
-            self.ukazovatel = "123"
-        elif self.d >= 1 and self.i >= 0 and self.s < -1 and self.k >= -2:
-            print (124)
-            self.ukazovatel = "124"
-        elif self.d >= 1 and self.i < 0 and self.s >= -1 and self.k >= -2:
-            print(134)
-            self.ukazovatel = "134"
-        elif self.d < 1 and self.i >= 0 and self.s >= -1 and self.k >= -2:
-            print(234)
-            self.ukazovatel = "234"
-
-        # dve cisla s rovnakou poziciou
-        elif self.d == 4 and self.i == 1 and self.s < 0 and self.k < -2 or self.d == 5 and self.i == 2 and self.s < 0 and self.k < -2 or self.d == 6 and self.i == 3 and self.s < 0 and self.k < -2 or self.d == 9 and self.i == 5 and self.s < 0 and self.k < -2 or self.d == 10 and self.i == 6 and self.s < 0 and self.k < -2 or self.d == 14 and self.i == 8 and self.s < 0 and self.k < -2 or self.d == 15 and self.i == 9 and self.s < 0 and self.k < -2 or self.d == 16 and self.i == 10 and self.s < 0 and self.k < -2 or self.d == 21 and self.i == 17 and self.s < 0 and self.k < -2:
-            print(12)
-            self.ukazovatel = "012"
-
-        elif self.d == 4 and self.i < 0 and self.s == 0 and self.k < -2 or self.d == 5 and self.i <0 and self.s == 1 and self.k < -2 or self.d == 6 and self.i <0 and self.s == 2 and self.k < -2 or self.d == 7 and self.i <0 and self.s == 3 and self.k < -2 or self.d == 8 and self.i <0 and self.s == 4 and self.k < -2 or self.d == 9 and self.i <0 and self.s == 5 and self.k < -2 or self.d == 10 and self.i <0 and self.s == 7 and self.k < -2 or self.d == 13 and self.i <0 and self.s == 8 and self.k < -2 or self.d == 14 and self.i <0 and self.s == 9 and self.k < -2 or self.d == 15 and self.i <0 and self.s == 10 and self.k < -2 or self.d == 16 and self.i <0 and self.s == 11 and self.k < -2 or self.d == 21 and self.i <0 and self.s == 19 and self.k < -2 :
-            print(13)
-            self.ukazovatel = "013"
-
-        elif self.d == 4 and self.i < 0 and self.s < -1 and self.k == -1 or self.d == 5 and self.i < 0 and self.s < -1 and self.k == 0 or self.d == 8 and self.i < 0 and self.s < -1 and self.k == 2 or self.d == 9 and self.i < 0 and self.s < -1 and self.k == 3 or self.d == 13 and self.i < 0 and self.s < -1 and self.k == 5 or self.d == 4 and self.i < 0 and self.s < -1 and self.k == 6 or self.d == 15 and self.i < 0 and self.s < -1 and self.k == 7 or self.d == 16 and self.i < 0 and self.s < -1 and self.k == 8 or self.d == 21 and self.i < 0 and self.s < -1 and self.k == 15:
-            print(14)
-            self.ukazovatel = "014"
-
-        elif self.d <1 and self.i == 0 and self. s == -1 and self.k < -2 or self.d <1 and self.i == 1 and self. s == 0 and self.k < -2 or self.d <1 and self.i == 2 and self. s == 1 and self.k < -2 or self.d <1 and self.i == 3 and self. s == 2 and self.k < -2 or self.d <1 and self.i == 5 and self. s == 5 and self.k < -2 or self.d <1 and self.i == 6 and self. s == 7 and self.k < -2 or self.d <1 and self.i == 7 and self. s == 8 and self.k < -2 or self.d <1 and self.i == 8 and self. s == 9 and self.k < -2 or self.d <1 and self.i == 9 and self. s == 10 and self.k < -2 or self.d <1 and self.i == 10 and self. s == 11 and self.k < -2 or self.d <1 and self.i == 17 and self. s == 19 and self.k < -2:
-            print(23)
-            self.ukazovatel = "023"
-
-        elif self.d <1 and self.i == 0 and self. s < -1 and self.k == -2 or self.d <1 and self.i == 1 and self. s < -1 and self.k == -1 or self.d <1 and self.i == 2 and self. s < -1 and self.k == 0 or self.d <1 and self.i == 5 and self. s < -1 and self.k == 3 or self.d <1 and self.i == 8 and self. s < -1 and self.k == 6 or self.d <1 and self.i == 9 and self. s < -1 and self.k == 7 or self.d <1 and self.i == 10 and self. s < -1 and self.k == 8 or self.d <1 and self.i == 17 and self. s < -1 and self.k == 15:
-            print(24)
-            self.ukazovatel = "024"
-
-        elif self.d <1 and self.i< 0 and self.s == -1 and self.k == -2 or self.d <1 and self.i< 0 and self.s == 0 and self.k == -1 or self.d <1 and self.i< 0 and self.s == 1 and self.k == 0 or self.d <1 and self.i< 0 and self.s == 4 and self.k == 2 or self.d <1 and self.i< 0 and self.s == 5 and self.k == 3 or self.d <1 and self.i< 0 and self.s == 9 and self.k == 6 or self.d <1 and self.i< 0 and self.s == 10 and self.k == 7 or self.d <1 and self.i< 0 and self.s == 11 and self.k == 8 or self.d <1 and self.i< 0 and self.s == 19 and self.k == 15 :
-            print(34)
-            self.ukazovatel = "034"
-
-        # jedno cislo
-        elif self.d >= 1 and self.i < 0 and self.s < -1 and self.k < -2:
-            print(1)
-            self.ukazovatel = "001"
-        elif self.i >= 0 and self.d < 1 and self.s < -1 and self.k < -2:
-            print(2)
-            self.ukazovatel = "002"
-        elif self.s >= -1 and self.i < 0 and self.d < 1 and self.k < -2:
-            print(3)
-            self.ukazovatel = "003"
-        elif self.k >= -2 and self.d < 1 and self.i < 0 and self.s < -1:
-            print(4)
-            self.ukazovatel = "004"
-
-        #vsetky
-        elif self.d >= 1 and self.i >= 0 and self.s >= -1 and self.k >= -2:
-            self.ukazovatel = "zle urobeny test"
-
-        #dve cisla
-        else:
-            self.dve()
-
-    def dve(self):
         #d
         if self.d < 1:
             self.d_hodnota = 0
@@ -477,7 +415,48 @@ class test:
 
         print(self.d_dvojica, self.i_dvojica, self.s_dvojica, self.k_dvojica, )
 
-        if self.d_dvojica[0] > self.i_dvojica[0] != 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
+        #pre styri
+        if self.d_dvojica[0] > 0 and self.i_dvojica[0] > 0 and self.s_dvojica[0] > 0 and self.k_dvojica[0] > 0:
+            self.ukazovatel = "zle"
+
+        #pre tri
+        elif self.d_dvojica[0] > 0 and self.i_dvojica[0] > 0 and self.s_dvojica[0] > 0 and self.k_dvojica[0] == 0:
+            print("123")
+            self.ukazovatel = "123"
+        elif self.d_dvojica[0] > 0 and self.i_dvojica[0] > 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] > 0:
+            print("124")
+            self.ukazovatel = "124"
+        elif self.d_dvojica[0] > 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] > 0 and self.k_dvojica[0] > 0:
+            print("134")
+            self.ukazovatel = "134"
+        elif self.d_dvojica[0] == 0 and self.i_dvojica[0] > 0 and self.s_dvojica[0] > 0 and self.k_dvojica[0] > 0:
+            print("234")
+            self.ukazovatel = "234"
+
+
+        #pre dve rovnaka pozicia
+        elif self.d_dvojica[0] == self.i_dvojica[0]  and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
+            print("12")
+            self.ukazovatel = "012"
+        elif self.d_dvojica[0] == self.s_dvojica[0]  and self.i_dvojica[0] == 0 and self.k_dvojica[0] == 0:
+            print("13")
+            self.ukazovatel = "013"
+        elif self.d_dvojica[0] == self.k_dvojica[0]  and self.s_dvojica[0] == 0 and self.i_dvojica[0] == 0:
+            print("14")
+            self.ukazovatel = "014"
+        elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == self.s_dvojica[0]  and self.k_dvojica[0] == 0:
+            print("23")
+            self.ukazovatel = "023"
+        elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == self.k_dvojica[0]  and self.s_dvojica[0] == 0:
+            print("24")
+            self.ukazovatel = "024"
+        elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == self.k_dvojica[0]:
+            print("34")
+            self.ukazovatel = "034"
+
+
+        #pre dve rozdielna pozicia
+        elif self.d_dvojica[0] > self.i_dvojica[0] != 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("12")
             self.ukazovatel = "012"
         elif self.d_dvojica[0] > self.s_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.k_dvojica[0] == 0:
@@ -516,6 +495,21 @@ class test:
         elif self.k_dvojica[0] > self.s_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.d_dvojica[0] == 0:
             print("43")
             self.ukazovatel = "043"
+
+        # pre jedno
+        elif self.d_dvojica[0] > 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
+            print("1")
+            self.ukazovatel = "001"
+        elif self.d_dvojica[0] == 0 and self.i_dvojica[0] > 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
+            print("2")
+            self.ukazovatel = "002"
+        elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] > 0 and self.k_dvojica[0] == 0:
+            print("3")
+            self.ukazovatel = "003"
+        elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] > 0:
+            print("4")
+            self.ukazovatel = "004"
+
         else:
             pass
 
@@ -528,7 +522,7 @@ class test:
             load = p.read()
         with open("testy.txt", "w") as p:
             p.write(load)
-            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+"; "+ self.get_date() )
+            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+"; "+ self.get_date() + "\n")
 
 class TestScreenV(Screen):
     snackbar = None
@@ -537,9 +531,23 @@ class TestScreenV(Screen):
     help_dialog_mv = None
     help_dialog_vm = None
     help_dialog_vv = None
+    start_dialog = None
+
+    def on_enter(self):
+        btn = MDRectangleFlatButton(text="Rozumiem", on_release=self.frst_dialog)
+        self.start_dialog = MDDialog(
+            text="Zvoľ si názov, potvrď a môžeš začať s testom ",
+            size_hint=[0.8, 0.5], auto_dismiss=True, buttons=[btn])
+        self.start_dialog.open()
+
+    def frst_dialog(self, obj):
+        self.start_dialog.dismiss()
 
     def add_test(self):
-        self.testovatel= test(self.ids.nazov_testu.text)
+        if self.ids.nazov_testu.text != "":
+            self.testovatel = test(self.ids.nazov_testu.text)
+        else:
+            self.testovatel = test("Test1")
 
     def dele_v(self):
         if self.testovatel.test_v != []:
@@ -621,7 +629,7 @@ class TestScreenV(Screen):
 
     def skontroluj(self):
         if len(self.testovatel.test_v)== 24 and len(self.testovatel.test_m)== 24:
-            self.testovatel.vyhodnotenie()
+            self.testovatel.priorita()
             self.show_example_snackbar()
         elif len(self.testovatel.test_v)< 24:
             self.show_HelpDialogVM()
