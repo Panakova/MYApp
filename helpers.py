@@ -50,7 +50,7 @@ ScreenManager:
         font_size: "30sp"    
     
     Button: 
-        background_color: 0,0,0,0.5
+        background_color: 0,0,0,0
         size_hint: 0.4,0.2
         pos_hint:{"center_x": 0.3,"center_y": 0.4 }
         on_press: root.change1 ()  
@@ -65,7 +65,7 @@ ScreenManager:
             center_y: self.parent.center_y
             
     Button: 
-        background_color: 0,0,0,0.5
+        background_color: 0,0,0,0
         size_hint: 0.4,0.2
         pos_hint:{"center_x": 0.7,"center_y": 0.4}
         on_press: root.change2 ()  
@@ -80,7 +80,7 @@ ScreenManager:
             center_y: self.parent.center_y
             
     Button: 
-        background_color: 0,0,0,0.5
+        background_color: 0,0,0,0
         size_hint: 0.4,0.2
         pos_hint:{"center_x": 0.7,"center_y": 0.6 }
         on_press: root.change3 () 
@@ -94,7 +94,7 @@ ScreenManager:
             center_y: self.parent.center_y
             
     Button: 
-        background_color: 0,0,0,0.5
+        background_color: 0,0,0,0
         size_hint: 0.4,0.2
         pos_hint:{"center_x": 0.3,"center_y": 0.6 }
         on_press: root.change4 ()
@@ -117,14 +117,14 @@ ScreenManager:
     MDFloatingActionButton:
         icon: "play-circle-outline"
         size_hint: None, None
-        pos_hint: {"center_x" :0.5, "center_y":0.07}
+        pos_hint: {"center_x" :0.5, "center_y":0.05}
         md_bg_color: app.theme_cls.primary_color
         on_release: root.show_ChooseDialog()
 
     MDFloatingActionButton:
         icon: "help-circle-outline"
         md_bg_color: app.theme_cls.primary_color
-        pos_hint: { "center_x" :0.15, "center_y":0.07}
+        pos_hint: { "center_x" :0.15, "center_y":0.05}
         on_release: root.show_HelpDialog()
 
     MDFloatingActionButtonSpeedDial:
@@ -200,7 +200,7 @@ ScreenManager:
 
     MDFloatingActionButton:
         icon: "play-circle-outline"
-        pos_hint: { "center_x" :0.5, "center_y":0.08}
+        pos_hint: { "center_x" :0.5, "center_y":0.05}
         md_bg_color: app.theme_cls.primary_color
         on_release: 
             root.manager.current = "testv"
@@ -288,7 +288,7 @@ ScreenManager:
         
     MDFloatingActionButton:
         icon: "play-circle-outline"
-        pos_hint: { "center_x" :0.5, "center_y":0.08}
+        pos_hint: { "center_x" :0.5, "center_y":0.05}
         md_bg_color: app.theme_cls.primary_color
         on_release: 
             root.manager.current = "testv"
@@ -376,7 +376,7 @@ ScreenManager:
             
     MDFloatingActionButton:
         icon: "play-circle-outline"
-        pos_hint: { "center_x" :0.5, "center_y":0.08}
+        pos_hint: { "center_x" :0.5, "center_y":0.05}
         md_bg_color: app.theme_cls.primary_color
         on_release: 
             root.manager.current = "testv"
@@ -2655,7 +2655,7 @@ ScreenManager:
                             
             MDFloatingActionButton:
                 icon: "check-circle-outline"
-                pos_hint: { "center_x" :0.7, "center_y":0.08}
+                pos_hint: { "center_x" :0.5, "center_y":0.08}
                 md_bg_color: app.theme_cls.primary_color
                 on_release: root.skontroluj()      
             
@@ -2913,7 +2913,7 @@ ScreenManager:
             height: self.texture_size[1] 
     
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.25, "center_y": 0.05} 
+        pos_hint:{ "center_x" :0.15, "center_y": 0.05} 
         size_hint: None, None
         text: "Vymazať"
         on_press: root.vymaz()
@@ -2969,5 +2969,3 @@ ScreenManager:
             'notebook': 'Moje testy'}
             
 """
-
-
