@@ -640,12 +640,8 @@ class TestScreenV(Screen):
             self.show_HelpDialogVV()
 
     def show_example_snackbar(self):
-        self.snackbar = Snackbar(text="Ukončiť test?",
-                                    snackbar_x="10dp",
-                                    snackbar_y="10dp",
-                                 bg_color= (0.96,0.79,0.09, 1),)
-        self.snackbar.size_hint_x = ( Window.width -
-                                      (self.snackbar.snackbar_x * 2)) / Window.width
+        self.snackbar = Snackbar(text="Ukončiť test?",snackbar_y="10dp", snackbar_x = "10dp",bg_color= (0.96,0.79,0.09, 1),)
+        #self.snackbar.size_hint_x = ( Window.width - (self.snackbar.snackbar_x * 2)) / Window.width
         self.snackbar.buttons = [MDFlatButton(text="Áno",text_color=(1, 1, 1, 1),
                                               on_release=self.evaluate, on_press= self.hm ),]
         self.snackbar.open()
