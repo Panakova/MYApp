@@ -522,7 +522,7 @@ class test:
             load = p.read()
         with open("testy.txt", "w") as p:
             p.write(load)
-            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+"; "+ self.get_date() + "\n")
+            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+"; " + "\n")
 
 class TestScreenV(Screen):
     snackbar = None
