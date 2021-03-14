@@ -2657,7 +2657,7 @@ ScreenManager:
                 icon: "check-circle-outline"
                 pos_hint: { "center_x" :0.5, "center_y":0.08}
                 md_bg_color: app.theme_cls.primary_color
-                on_release: root.skontroluj()      
+                on_release: root.skontroluj()           
             
             MDSeparator:
                 height: "1dp"                
@@ -2969,3 +2969,5 @@ ScreenManager:
             'notebook': 'Moje testy'}
             
 """
+
+
