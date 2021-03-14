@@ -2947,7 +2947,7 @@ ScreenManager:
     ThreeLineAvatarListItem:   
         id:mylabel2 
         ImageLeftWidget:
-            source: "all.png"
+            source: "main.png"
     
     MDLabel:
         id: mylabel3
