@@ -650,7 +650,7 @@ class TestScreenV(Screen):
                                               on_release=self.evaluate, on_press= self.hm ),]
         self.snackbar.open()
 
-    def hm(self):
+    def hm(self,obj):
         self.testovatel.priorita()
         self.testovatel.zapis_test()
 
