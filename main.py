@@ -522,7 +522,7 @@ class test:
             load = p.read()
         with open("testy.txt", "w") as p:
             p.write(load)
-            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+"; " + "\n")
+            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+"; "+ self.get_date()+ "\n")
 
 class TestScreenV(Screen):
     snackbar = None
@@ -629,7 +629,6 @@ class TestScreenV(Screen):
 
     def skontroluj(self):
         if len(self.testovatel.test_v)== 24 and len(self.testovatel.test_m)== 24:
-            self.testovatel.priorita()
             self.show_example_snackbar()
         elif len(self.testovatel.test_v)< 24:
             self.show_HelpDialogVM()
@@ -648,11 +647,14 @@ class TestScreenV(Screen):
         self.snackbar.size_hint_x = ( Window.width -
                                       (self.snackbar.snackbar_x * 2)) / Window.width
         self.snackbar.buttons = [MDFlatButton(text="Áno",text_color=(1, 1, 1, 1),
-                                              on_release=self.evaluate),]
+                                              on_release=self.evaluate, on_press= self.hm ),]
         self.snackbar.open()
 
-    def evaluate (self,obj):
+    def hm(self):
+        self.testovatel.priorita()
         self.testovatel.zapis_test()
+
+    def evaluate (self,obj):
         self.manager.current= "history"
         self.manager.transition.direction = 'left'
 
