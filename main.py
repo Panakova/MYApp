@@ -437,95 +437,97 @@ class test:
         #pre dve rovnaka pozicia
         elif self.d_dvojica[0] == self.i_dvojica[0]  and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("12")
-            self.ukazovatel = "012"
+            self.ukazovatel = "12"
         elif self.d_dvojica[0] == self.s_dvojica[0]  and self.i_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("13")
-            self.ukazovatel = "013"
+            self.ukazovatel = "13"
         elif self.d_dvojica[0] == self.k_dvojica[0]  and self.s_dvojica[0] == 0 and self.i_dvojica[0] == 0:
             print("14")
-            self.ukazovatel = "014"
+            self.ukazovatel = "14"
         elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == self.s_dvojica[0]  and self.k_dvojica[0] == 0:
             print("23")
-            self.ukazovatel = "023"
+            self.ukazovatel = "23"
         elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == self.k_dvojica[0]  and self.s_dvojica[0] == 0:
             print("24")
-            self.ukazovatel = "024"
+            self.ukazovatel = "24"
         elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == self.k_dvojica[0]:
             print("34")
-            self.ukazovatel = "034"
+            self.ukazovatel = "34"
 
 
         #pre dve rozdielna pozicia
         elif self.d_dvojica[0] > self.i_dvojica[0] != 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("12")
-            self.ukazovatel = "012"
+            self.ukazovatel = "12"
         elif self.d_dvojica[0] > self.s_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("13")
-            self.ukazovatel = "013"
+            self.ukazovatel = "13"
         elif self.d_dvojica[0] > self.k_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == 0:
             print("14")
-            self.ukazovatel = "014"
+            self.ukazovatel = "14"
 
         elif self.i_dvojica[0] > self.d_dvojica[0] != 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("21")
-            self.ukazovatel = "021"
+            self.ukazovatel = "21"
         elif self.i_dvojica[0] > self.s_dvojica[0] != 0 and self.d_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("23")
-            self.ukazovatel = "023"
+            self.ukazovatel = "23"
         elif self.i_dvojica[0] > self.k_dvojica[0] != 0 and self.s_dvojica[0] == 0 and self.d_dvojica[0] == 0:
             print("24")
-            self.ukazovatel = "024"
+            self.ukazovatel = "24"
 
         elif self.s_dvojica[0] > self.d_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("31")
-            self.ukazovatel = "031"
+            self.ukazovatel = "31"
         elif self.s_dvojica[0] > self.i_dvojica[0] != 0 and self.d_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("32")
-            self.ukazovatel = "032"
+            self.ukazovatel = "32"
         elif self.s_dvojica[0] > self.k_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.d_dvojica[0] == 0:
             print("34")
-            self.ukazovatel = "034"
+            self.ukazovatel = "34"
 
         elif self.k_dvojica[0] > self.d_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == 0:
             print("41")
-            self.ukazovatel = "041"
+            self.ukazovatel = "41"
         elif self.k_dvojica[0] > self.i_dvojica[0] != 0 and self.d_dvojica[0] == 0 and self.s_dvojica[0] == 0:
             print("42")
-            self.ukazovatel = "042"
+            self.ukazovatel = "42"
         elif self.k_dvojica[0] > self.s_dvojica[0] != 0 and self.i_dvojica[0] == 0 and self.d_dvojica[0] == 0:
             print("43")
-            self.ukazovatel = "043"
+            self.ukazovatel = "43"
 
         # pre jedno
         elif self.d_dvojica[0] > 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("1")
-            self.ukazovatel = "001"
+            self.ukazovatel = "1"
         elif self.d_dvojica[0] == 0 and self.i_dvojica[0] > 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] == 0:
             print("2")
-            self.ukazovatel = "002"
+            self.ukazovatel = "2"
         elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] > 0 and self.k_dvojica[0] == 0:
             print("3")
-            self.ukazovatel = "003"
+            self.ukazovatel = "3"
         elif self.d_dvojica[0] == 0 and self.i_dvojica[0] == 0 and self.s_dvojica[0] == 0 and self.k_dvojica[0] > 0:
             print("4")
-            self.ukazovatel = "004"
+            self.ukazovatel = "4"
 
         else:
             pass
 
     @staticmethod
     def get_date():
-        return str(datetime.datetime.now())
+        now = datetime.datetime.now()
+        return now.strftime("%d-%m-%Y %H:%M")
+        #return str(datetime.datetime.now())
 
     def zapis_test(self):
         with open("testy.txt", "r") as p:
             load = p.read()
         with open("testy.txt", "w") as p:
             p.write(load)
-            p.write("Názov: "+self.testovatel +"; Ukazovateľ: " + self.ukazovatel+"; "+ self.get_date()+ "\n")
+            p.write("Názov: "+ self.testovatel  + "; Ukazovateľ: " + self.ukazovatel +"; "+ self.get_date()+ "\n")
 
 class TestScreenV(Screen):
-    snackbar = None
+    eval_dialog = None
     dele_dialog = None
     help_dialog_mm = None
     help_dialog_mv = None
@@ -629,7 +631,7 @@ class TestScreenV(Screen):
 
     def skontroluj(self):
         if len(self.testovatel.test_v)== 24 and len(self.testovatel.test_m)== 24:
-            self.show_motivation_dialog()
+            self.show_ev_dialog()
         elif len(self.testovatel.test_v)< 24:
             self.show_HelpDialogVM()
         elif len(self.testovatel.test_v)> 24:
@@ -641,20 +643,22 @@ class TestScreenV(Screen):
         else:
             pass
 
-    M_dialog = None
 
-    def show_motivation_dialog(self):
-        ok_button = MDRaisedButton(text="Aňo", on_release=self.evaluate, on_press= self.hm)
-        self.M_dialog = MDDialog(title="Ukončiť test? ",
+
+    def show_ev_dialog(self):
+        btn2 = MDRaisedButton(text="ULOŽIŤ", on_release=self.close_dialog, on_press= self.evaluate)
+        btn1 = MDFlatButton(text="ZRUŠIŤ", on_release= self.close_dialog)
+        self.eval_dialog = MDDialog(title="Ukončiť test? ",
                                  size_hint=[0.8, 0.5], auto_dismiss=True,
-                                 buttons=[ok_button])
-        self.M_dialog.open()
+                                 buttons=[btn1, btn2])
+        self.eval_dialog.open()
 
-    def hm(self,obj):
-        self.testovatel.priorita()
-        self.testovatel.zapis_test()
+    def close_dialog(self, obj):
+        self.eval_dialog.dismiss()
 
     def evaluate (self,obj):
+        self.testovatel.priorita()
+        self.testovatel.zapis_test()
         self.manager.current= "history"
         self.manager.transition.direction = 'left'
 
@@ -668,7 +672,19 @@ class MyGoalsScreen (Screen):
         file.close()
         self.ids.mylabel.text = load_file
 
-    def vymaz(self):
+    def bin(self):
+        btn2 = MDRaisedButton(text="VYMAZAŤ", on_release=self.close_dialog, on_press=self.vymaz)
+        btn1 = MDFlatButton(text="ZRUŠIŤ", on_release=self.close_dialog)
+        self.bin_d = MDDialog(title="Naozaj vymazať testy?",text= "Pri vymazaní sa stratia všetky "
+                                                                  "tovje ciele.",
+                                    size_hint=[0.8, 0.5], auto_dismiss=True,
+                                    buttons=[btn1, btn2])
+        self.bin_d.open()
+
+    def close_dialog(self, obj):
+        self.bin_d.dismiss()
+
+    def vymaz(self,obj):
         with open("goals.txt", "w") as p:
             p.write("")
         self.on_enter()
@@ -811,25 +827,34 @@ class GoalsScreen(Screen):
 
 class HistoryScreen(Screen):
     custom_sheet = None
+    bin_d = None
 
     def on_enter(self):
         file = open("testy.txt", "r")
         load_file = ""
         for line in file:
             load_file = load_file + line
-            self.ids.mylabel2.add_widget(
-                ThreeLineAvatarListItem(text= load_file  [0:12] ,
-                                        secondary_text=load_file [14:29],
-                                        tertiary_text="Dátum: "+load_file [32:47] ))
-
-        file.close()
-
-        file = open("testy.txt", "r")
-        load_file = ""
-        for line in file:
-            load_file = load_file + line
         file.close()
         self.ids.mylabel3.text = load_file
+
+
+
+    def bin(self):
+        btn2 = MDRaisedButton(text="VYMAZAŤ", on_release=self.close_dialog, on_press=self.vymaz)
+        btn1 = MDFlatButton(text="ZRUŠIŤ", on_release=self.close_dialog)
+        self.bin_d = MDDialog(title="Naozaj vymazať testy?",text= "Pri vymazaní sa stratia všetky "
+                                                                  "vyhodnotenia testov.",
+                                    size_hint=[0.8, 0.5], auto_dismiss=True,
+                                    buttons=[btn1, btn2])
+        self.bin_d.open()
+
+    def close_dialog(self, obj):
+        self.bin_d.dismiss()
+
+    def vymaz(self,obj):
+        with open("testy.txt", "w") as p:
+            p.write(" ")
+        self.on_enter()
 
     def show_bottom_sheet(self):
         bs = MDListBottomSheet()
