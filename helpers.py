@@ -2902,6 +2902,8 @@ ScreenManager:
             pos_hint: { "center_y":0.95}
             halign: "left"
             size_hint: 0.8, 0.1
+            theme_text_color: "Custom"
+            text_color: app.theme_cls.primary_color
             height: self.texture_size[1] 
             
         MDSeparator:
@@ -2912,11 +2914,12 @@ ScreenManager:
             halign: "left"
             height: self.texture_size[1] 
     
-    MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.15, "center_y": 0.05} 
-        size_hint: None, None
-        text: "Vymazať"
-        on_press: root.vymaz()
+    MDIconButton:
+        icon: 'delete-empty'
+        theme_text_color: "Custom"
+        pos_hint:{ "center_x" :0.05, "center_y": 0.05} 
+        text_color:  app.theme_cls.primary_color
+        on_press: root.bin()
             
          
     MDFillRoundFlatButton:
@@ -2944,19 +2947,35 @@ ScreenManager:
         pos_hint: {"top": 1} 
         right_action_items: [['notebook-outline', lambda x: None]] 
     
-    ThreeLineAvatarListItem:   
-        id:mylabel2 
-        ImageLeftWidget:
-            source: "main.png"
-    
-    MDLabel:
-        id: mylabel3
-        spacing: "10dp"
-        halign: "center"
-        height: self.texture_size[1]         
-
+    BoxLayout:   
+        pos_hint:{ "center_x" :0.5, "center_y": 0.5} 
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: self.minimum_height
+        spacing: "5dp" 
+        padding: "10dp"
+         
+        MDIconButton:
+            icon: 'clover'
+            theme_text_color: "Custom"
+            text_color:  0.6,0.73,0.35,1
+                  
+        
+        MDLabel:
+            id: mylabel3
+            spacing: "10dp"
+            halign: "center"
+            height: self.texture_size[1]     
+         
+    MDIconButton:
+        icon: 'delete-empty'
+        theme_text_color: "Custom"
+        pos_hint:{ "center_x" :0.05, "center_y": 0.05} 
+        text_color:  app.theme_cls.primary_color
+        on_press: root.bin()
+            
     MDFillRoundFlatButton:
-        pos_hint:{ "center_x" :0.5, "center_y": 0.2} 
+        pos_hint:{ "center_x" :0.5, "center_y": 0.05} 
         size_hint: None, None
         text: "Typy osobností"
         on_press: root.show_bottom_sheet()
