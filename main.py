@@ -629,7 +629,7 @@ class TestScreenV(Screen):
 
     def skontroluj(self):
         if len(self.testovatel.test_v)== 24 and len(self.testovatel.test_m)== 24:
-            self.show_example_snackbar()
+            self.show_motivation_dialog()
         elif len(self.testovatel.test_v)< 24:
             self.show_HelpDialogVM()
         elif len(self.testovatel.test_v)> 24:
@@ -638,13 +638,17 @@ class TestScreenV(Screen):
             self.show_HelpDialogMM()
         elif len(self.testovatel.test_m)> 24:
             self.show_HelpDialogVV()
+        else:
+            pass
 
-    def show_example_snackbar(self):
-        self.snackbar = Snackbar(text="Ukončiť test?",snackbar_y="10dp", snackbar_x = "10dp",bg_color= (0.96,0.79,0.09, 1),)
-        #self.snackbar.size_hint_x = ( Window.width - (self.snackbar.snackbar_x * 2)) / Window.width
-        self.snackbar.buttons = [MDFlatButton(text="Áno",text_color=(1, 1, 1, 1),
-                                              on_release=self.evaluate, on_press= self.hm ),]
-        self.snackbar.open()
+    M_dialog = None
+
+    def show_motivation_dialog(self):
+        ok_button = MDRaisedButton(text="Aňo", on_release=self.evaluate, on_press= self.hm)
+        self.M_dialog = MDDialog(title="Ukončiť test? ",
+                                 size_hint=[0.8, 0.5], auto_dismiss=True,
+                                 buttons=[ok_button])
+        self.M_dialog.open()
 
     def hm(self,obj):
         self.testovatel.priorita()
