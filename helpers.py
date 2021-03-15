@@ -2647,12 +2647,6 @@ ScreenManager:
                                 
                             text_of_the_option: "i"  
                             
-            MDFillRoundFlatButton:
-                text: "Zatial to nejde ale tvar sa ze hej, klikni sem"
-                size_hint: None, None
-                pos_hint: {"center_x" :0.5, "center_y":0.05}
-                on_release: root.manager.current = "history"
-                            
             MDFloatingActionButton:
                 icon: "check-circle-outline"
                 pos_hint: { "center_x" :0.5, "center_y":0.08}
@@ -2947,25 +2941,19 @@ ScreenManager:
         pos_hint: {"top": 1} 
         right_action_items: [['notebook-outline', lambda x: None]] 
     
-    BoxLayout:   
-        pos_hint:{ "center_x" :0.5, "center_y": 0.5} 
-        orientation: 'horizontal'
-        size_hint_y: None
-        height: self.minimum_height
-        spacing: "5dp" 
-        padding: "10dp"
+
          
-        MDIconButton:
-            icon: 'clover'
-            theme_text_color: "Custom"
-            text_color:  0.6,0.73,0.35,1
-                  
+    MDIconButton:
+        pos_hint:{ "center_x" :0.5, "center_y": 0.85} 
+        icon: 'clover'
+        theme_text_color: "Custom"
+        text_color:  0.6,0.73,0.35,1
         
-        MDLabel:
-            id: mylabel3
-            spacing: "10dp"
-            halign: "center"
-            height: self.texture_size[1]     
+    MDLabel:
+        id: mylabel3
+        spacing: "10dp"
+        halign: "center"
+        height: self.texture_size[1]     
          
     MDIconButton:
         icon: 'delete-empty'
