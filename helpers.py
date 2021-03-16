@@ -195,7 +195,7 @@ ScreenManager:
         text: "Čo môžeš získať?"
         size_hint: None, None
         text_color: 0,0,0,1
-        pos_hint: {"center_x" :0.25, "center_y":0.3}
+        pos_hint: {"center_x" :0.25, "center_y":0.05}
         on_release: root.show_motivation_dialog()    
 
     MDFloatingActionButton:
@@ -283,7 +283,7 @@ ScreenManager:
         text: "Čo môžeš získať?"
         size_hint: None, None
         text_color: 0,0,0,1
-        pos_hint: {"center_x" :0.25, "center_y":0.25}
+        pos_hint: {"center_x" :0.25, "center_y":0.05}
         on_release: root.show_motivation_dialog()    
         
     MDFloatingActionButton:
@@ -371,7 +371,7 @@ ScreenManager:
         text: "Čo môžeš získať?"
         size_hint: None, None
         text_color: 0,0,0,1
-        pos_hint: {"center_x" :0.25, "center_y":0.22}
+        pos_hint: {"center_x" :0.25, "center_y":0.05}
         on_release: root.show_motivation_dialog()    
             
     MDFloatingActionButton:
