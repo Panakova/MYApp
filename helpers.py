@@ -161,7 +161,7 @@ ScreenManager:
             height: self.texture_size[1]
             halign: "left"
         MDLabel:
-            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú."
+            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú. Odpoveď sa vymaže aj keď farba políčka ostane rovnaká."
             size_hint_y: None
             height: self.texture_size[1]
             halign: "left"
@@ -195,7 +195,7 @@ ScreenManager:
         text: "Čo môžeš získať?"
         size_hint: None, None
         text_color: 0,0,0,1
-        pos_hint: {"center_x" :0.25, "center_y":0.05}
+        pos_hint: {"center_x" :0.25, "center_y":0.0.5}
         on_release: root.show_motivation_dialog()    
 
     MDFloatingActionButton:
@@ -239,7 +239,7 @@ ScreenManager:
             height: self.texture_size[1]
             halign: "left"
         MDLabel:
-            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú."
+            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú. Odpoveď sa vymaže aj keď farba políčka ostane rovnaká."
             size_hint_y: None
             height: self.texture_size[1]
             halign: "left"
@@ -327,7 +327,7 @@ ScreenManager:
             height: self.texture_size[1]
             halign: "left"
         MDLabel:
-            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú."
+            text: "Čakajú ťa dva testy, v ktorých si vyberáš možnosti podľa zadania. Ak zmeníš svoj názor, môžes vymazať poslednú zvolenú možnosť a následne vybrať inú. Odpoveď sa vymaže aj keď farba políčka ostane rovnaká."
             size_hint_y: None
             height: self.texture_size[1]
             halign: "left"
