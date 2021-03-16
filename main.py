@@ -718,7 +718,7 @@ class GoalsScreen(Screen):
                 load = p.read()
             with open("goals.txt", "w") as p:
                 p.write(load)
-                p.write("Model správania: "+ self.ids.model.text + "\n")
+                p.write("Môj model je: "+ self.ids.model.text + "\n")
 
         if self.ids.ciel1.text != "":
             with open("goals.txt", "r") as p:
@@ -732,14 +732,14 @@ class GoalsScreen(Screen):
                 load = p.read()
             with open("goals.txt", "w") as p:
                 p.write(load)
-                p.write("Rozvíjať sa môžem: "+ self.ids.ciel2.text +"\n" )
+                p.write("Ako sa môžem rozvíjať: "+ self.ids.ciel2.text +"\n" )
 
         if self.ids.ciel3.text != "":
             with open("goals.txt", "r") as p:
                 load = p.read()
             with open("goals.txt", "w") as p:
                 p.write(load)
-                p.write("Zistil som o sebe: "+ self.ids.ciel3.text +"\n" )
+                p.write("Čo nové som o sebe zistil: "+ self.ids.ciel3.text +"\n" )
 
         if self.ids.ciel4.text != "":
             with open("goals.txt", "r") as p:
@@ -753,7 +753,7 @@ class GoalsScreen(Screen):
                 load = p.read()
             with open("goals.txt", "w") as p:
                 p.write(load)
-                p.write("Mojími prednosťami pomôžem tímu: " + self.ids.ciel5.text + "\n")
+                p.write("Ako mojími prednosťami pomôžem tímu: " + self.ids.ciel5.text + "\n")
 
         if self.ids.ciel6.text != "":
             with open("goals.txt", "r") as p:
@@ -767,7 +767,7 @@ class GoalsScreen(Screen):
                 load = p.read()
             with open("goals.txt", "w") as p:
                 p.write(load)
-                p.write("Čo zvážiť pri jednaní s inými: " + self.ids.ciel7.text + "\n")
+                p.write("Čo by som mal zvážiť pri jednaní s inými: " + self.ids.ciel7.text + "\n")
 
         if self.ids.ciel8.text != "":
             with open("goals.txt", "r") as p:
@@ -788,7 +788,7 @@ class GoalsScreen(Screen):
                 load = p.read()
             with open("goals.txt", "w") as p:
                 p.write(load)
-                p.write("Kroky: " + self.ids.ciel10.text + "\n")
+                p.write("Moje kroky k zdokonalovaniu sú: " + self.ids.ciel10.text + "\n")
 
         if self.ids.ciel11.text != "":
             with open("goals.txt", "r") as p:
